@@ -12,50 +12,50 @@ public class Home {
     private JButton teamButton;
     private JButton giudiciButton;
     private JButton organizzatoreButton;
-    private static JFrame frame;
+    private static JFrame frameHome;
+
+    public static void main(String[] args) {
+        frameHome = new JFrame("Home");
+        frameHome.setContentPane(new Home().panelHome);
+        frameHome.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameHome.setVisible(true);
+        frameHome.setSize(1920,1080);
+    }
 
     public Home() {
         utenteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Utente utenteGUI = new Utente(frame);
+                Utente utenteGUI = new Utente(frameHome);
                 utenteGUI.frameUtente.setVisible(true);
-                frame.setVisible(false);
+                frameHome.setVisible(false);
 
             }
         });
         teamButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Team teamGUI = new Team(frame);
+                Team teamGUI = new Team(frameHome);
                 teamGUI.frameTeam.setVisible(true);
-                frame.setVisible(false);
+                frameHome.setVisible(false);
             }
         });
         giudiciButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Giudici giudiciGUI = new Giudici(frame);
+                Giudici giudiciGUI = new Giudici(frameHome);
                 giudiciGUI.frameGiudice.setVisible(true);
-                frame.setVisible(false);
+                frameHome.setVisible(false);
             }
         });
         organizzatoreButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                Organizzatore organizzatoreGUI = new Organizzatore(frame);
+                Organizzatore organizzatoreGUI = new Organizzatore(frameHome);
                 organizzatoreGUI.frameOrganizzatore.setVisible(true);
-                frame.setVisible(false);
+                frameHome.setVisible(false);
             }
         });
-    }
-
-    public static void main(String[] args) {
-        frame = new JFrame("Home");
-        frame.setContentPane(new Home().panelHome);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setSize(1920,1080);
     }
 
 
