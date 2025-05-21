@@ -3,12 +3,13 @@ package gui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import controller.Controller;
 
 public class Team {
     private JPanel teamPanel;
     private JButton closeButton;
     public JFrame frameTeam;
-    public Team(JFrame frame) {
+    public Team(JFrame frame, Controller controller) {
         frameTeam = new JFrame("Team");
         frameTeam.setContentPane(this.teamPanel);
         frameTeam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

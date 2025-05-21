@@ -1,5 +1,7 @@
 package gui;
 
+import controller.Controller;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +14,7 @@ public class Utente {
     private JButton closeButton;
     public JFrame frameUtente;
 
-    public Utente(JFrame frame) {
+    public Utente(JFrame frame, Controller controller) {
         frameUtente = new JFrame("Utente");
         frameUtente.setContentPane(this.panelUtente);
         frameUtente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,6 +28,7 @@ public class Utente {
             }
         });
     }
+
 }
 
 

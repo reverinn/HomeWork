@@ -1,5 +1,7 @@
 package gui;
 
+import controller.Controller;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,7 +10,7 @@ public class Giudici {
     private JPanel panelGiudice;
     private JButton closeButton;
     public JFrame frameGiudice;
-    public Giudici(JFrame frame) {
+    public Giudici(JFrame frame, Controller controller) {
         frameGiudice = new JFrame("Giudici");
         frameGiudice.setContentPane(this.panelGiudice);
         frameGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
