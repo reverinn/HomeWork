@@ -17,7 +17,6 @@ public class OrganizzatoreGUI {
     private JButton chiudiButton;
     private JButton loginButton;
     public JFrame frameOrganizzatore;
-    private boolean apertura = false;
     private boolean premuto = false;
 
     public OrganizzatoreGUI(JFrame frame, ControllerOrganizzatore controller) {
@@ -29,7 +28,7 @@ public class OrganizzatoreGUI {
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frameOrganizzatore.setVisible(false);
+                frameOrganizzatore.dispose();
                 frame.setVisible(true);
             }
         });
@@ -42,13 +41,13 @@ public class OrganizzatoreGUI {
         apriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.controllaApertura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText(), premuto);
+                controller.controllaApertura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
             }
         });
         chiudiButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               controller.controllaChiusura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText(), premuto);
+               controller.controllaChiusura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
             }
         });
         loginButton.addActionListener(new ActionListener() {

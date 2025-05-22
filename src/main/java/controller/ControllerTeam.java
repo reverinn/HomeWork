@@ -1,8 +1,6 @@
 package controller;
 
 import model.Team;
-import gui.TeamGUI;
-import controller.ControllerOrganizzatore;
 
 import javax.swing.*;
 

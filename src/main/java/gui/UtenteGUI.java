@@ -31,14 +31,14 @@ public class UtenteGUI {
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frameUtente.setVisible(false);
+                frameUtente.dispose();
                 frame.setVisible(true);
             }
         });
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               controller.controllaConferma(frame, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore.getPremuto(), controllerOrganizzatore);
+               controller.controllaConferma(frame, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
             }
         });
     }

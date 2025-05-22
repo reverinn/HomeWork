@@ -33,7 +33,7 @@ public class ControllerOrganizzatore {
         return premuto;
     }
 
-    public void Avvio(JFrame frame, boolean apertura) {
+    public void Avvio(JFrame frame) {
         if (getApertura()) {
             JOptionPane.showMessageDialog(frame, "Le iscrizioni sono aperte!");
         } else {
@@ -55,7 +55,7 @@ public class ControllerOrganizzatore {
         }
     }
 
-    public void controllaApertura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore, boolean premuto){
+    public void controllaApertura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore){
         if (nomeOrganizzatore.toLowerCase().contains(" ") || passwordOrganizzatore.toLowerCase().contains(" ")) {
             JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
         }
@@ -65,7 +65,7 @@ public class ControllerOrganizzatore {
         else if (getPremuto()){
             apertura = true;
             setApertura(apertura);
-            Avvio(frameOrganizzatore, apertura);
+            Avvio(frameOrganizzatore);
             frameOrganizzatore.setVisible(false);
             frameHome.setVisible(true);
         }
@@ -74,7 +74,7 @@ public class ControllerOrganizzatore {
         }
     }
 
-    public void controllaChiusura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore, boolean premuto){
+    public void controllaChiusura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore){
         if (nomeOrganizzatore.toLowerCase().contains(" ") || passwordOrganizzatore.toLowerCase().contains(" ")) {
             JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
         }

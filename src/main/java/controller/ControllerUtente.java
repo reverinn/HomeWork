@@ -1,8 +1,6 @@
 package controller;
 
-import gui.UtenteGUI;
 import model.Utente;
-import controller.ControllerOrganizzatore;
 
 import javax.swing.*;
 
@@ -17,7 +15,7 @@ public class ControllerUtente {
         utente.setUtente(passwordUtente, nomeUtente);
     }
 
-    public void controllaConferma(JFrame frameHome, JFrame frameUtente, String nomeUtente, String passwordUtente, boolean premuto, ControllerOrganizzatore controllerOrganizzatore) {
+    public void controllaConferma(JFrame frameHome, JFrame frameUtente, String nomeUtente, String passwordUtente, ControllerOrganizzatore controllerOrganizzatore) {
         if (!controllerOrganizzatore.getApertura()){
             JOptionPane.showMessageDialog(frameUtente,"Le iscrizioni sono chiuse!");
         }

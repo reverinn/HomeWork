@@ -23,7 +23,7 @@ public class TeamGUI {
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frameTeam.setVisible(false);
+                frameTeam.dispose();
                 frame.setVisible(true);
             }
         });

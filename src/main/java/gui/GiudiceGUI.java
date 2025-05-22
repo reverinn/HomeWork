@@ -24,7 +24,7 @@ public class GiudiceGUI {
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frameGiudice.setVisible(false);
+                frameGiudice.dispose();
                 frame.setVisible(true);
             }
         });

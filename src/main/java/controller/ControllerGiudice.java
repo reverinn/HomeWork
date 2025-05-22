@@ -1,8 +1,6 @@
 package controller;
 
-import gui.GiudiceGUI;
 import model.Giudice;
-import controller.ControllerOrganizzatore;
 
 import javax.swing.*;
 
