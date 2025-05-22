@@ -12,6 +12,12 @@ public class Utente {
 
     private JPanel panelUtente;
     private JButton closeButton;
+    private JLabel regutente;
+    private JTextField nomeUtenteTextField;
+    private JPasswordField passwordPasswordField;
+    private JLabel etNomeUtente;
+    private JLabel etPassword;
+    private JButton confermaButton;
     public JFrame frameUtente;
 
     public Utente(JFrame frame, Controller controller) {
@@ -25,6 +31,11 @@ public class Utente {
             public void actionPerformed(ActionEvent e) {
                 frameUtente.setVisible(false);
                 frame.setVisible(true);
+            }
+        });
+        passwordPasswordField.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
             }
         });
     }

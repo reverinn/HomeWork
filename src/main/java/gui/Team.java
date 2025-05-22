@@ -8,6 +8,9 @@ import controller.Controller;
 public class Team {
     private JPanel teamPanel;
     private JButton closeButton;
+    private JComboBox comboBox1;
+    private JLabel etselTeam;
+    private JButton OKButton;
     public JFrame frameTeam;
     public Team(JFrame frame, Controller controller) {
         frameTeam = new JFrame("Team");
@@ -20,6 +23,15 @@ public class Team {
             public void actionPerformed(ActionEvent e) {
                 frameTeam.setVisible(false);
                 frame.setVisible(true);
+            }
+        });
+        OKButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frameTeam,"Scelta avvenuta con successo!");
+                frameTeam.setVisible(false);
+                frame.setVisible(true);
+
             }
         });
     }

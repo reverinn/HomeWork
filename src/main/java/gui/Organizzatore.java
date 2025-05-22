@@ -8,6 +8,10 @@ import controller.Controller;
 public class Organizzatore {
     private JPanel panelOrganizzatore;
     private JButton closeButton;
+    private JTextField textField1;
+    private JPasswordField passwordField1;
+    private JLabel etNomeOrganizzatore;
+    private JButton confermaButton;
     public JFrame frameOrganizzatore;
     public Organizzatore(JFrame frame, Controller controller) {
         frameOrganizzatore = new JFrame("Organizzatore");

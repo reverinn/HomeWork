@@ -9,6 +9,10 @@ import java.awt.event.ActionListener;
 public class Giudici {
     private JPanel panelGiudice;
     private JButton closeButton;
+    private JTextField textField1;
+    private JPasswordField passwordField1;
+    private JLabel etNomeGiudice;
+    private JButton confermaButton;
     public JFrame frameGiudice;
     public Giudici(JFrame frame, Controller controller) {
         frameGiudice = new JFrame("Giudici");
