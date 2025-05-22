@@ -13,6 +13,8 @@ public class TeamGUI {
     private JComboBox teamBox;
     private JLabel etselTeam;
     private JButton OKButton;
+    private JButton CARICADOCUMENTOButton;
+    private JButton VISUALIZZAVOTOButton;
     public JFrame frameTeam;
     public TeamGUI(JFrame frame, ControllerTeam controller, ControllerOrganizzatore controllerOrganizzatore) {
         frameTeam = new JFrame("Team");

@@ -14,7 +14,9 @@ public class GiudiceGUI {
     private JPasswordField passwordGiudicePasswordField;
     private JLabel etNomeGiudice;
     private JButton confermaButton;
+    private JButton seiGiaIscrittoFaiButton;
     public JFrame frameGiudice;
+    private LoginGiudice loginGiudice;
     public GiudiceGUI(JFrame frame, ControllerGiudice controller, ControllerOrganizzatore controllerOrganizzatore) {
         frameGiudice = new JFrame("Giudici");
         frameGiudice.setContentPane(this.panelGiudice);
@@ -32,6 +34,12 @@ public class GiudiceGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.controllaConferma(frame, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
+            }
+        });
+        seiGiaIscrittoFaiButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loginGiudice=new LoginGiudice(frameGiudice,controller);
             }
         });
     }

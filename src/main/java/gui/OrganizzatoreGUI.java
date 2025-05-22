@@ -18,6 +18,7 @@ public class OrganizzatoreGUI {
     private JButton loginButton;
     public JFrame frameOrganizzatore;
     private boolean premuto = false;
+    private LoginOrganizzatore loginOrganizzatore;
 
     public OrganizzatoreGUI(JFrame frame, ControllerOrganizzatore controller) {
         frameOrganizzatore = new JFrame("Organizzatore");
@@ -53,6 +54,10 @@ public class OrganizzatoreGUI {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                loginOrganizzatore=new LoginOrganizzatore(frameOrganizzatore,controller);
+
+
+
             }
         });
     }
