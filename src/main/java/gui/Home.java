@@ -9,11 +9,11 @@ import java.awt.event.ActionListener;
 
 public class Home {
     private JPanel panelHome;
-    private JTextField HACKATON20252026TextField;
     private JButton utenteButton;
     private JButton teamButton;
     private JButton giudiciButton;
     private JButton organizzatoreButton;
+    private JLabel TITOLO;
     private static JFrame frameHome;
     private Controller controller;
 
