@@ -14,6 +14,7 @@ public class OrganizzatoreGUI {
     private JLabel etNomeOrganizzatore;
     private JButton confermaButton;
     private JButton apriButton;
+    private JButton chiudiButton;
     public JFrame frameOrganizzatore;
     private boolean apertura = false;
     private boolean premuto = false;
@@ -56,6 +57,23 @@ public class OrganizzatoreGUI {
                     apertura = true;
                     controller.setApertura(apertura);
                     controller.Avvio(frame, apertura);
+                    frameOrganizzatore.setVisible(false);
+                    frame.setVisible(true);
+                }
+                else{
+                    JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");
+                }
+            }
+        });
+        chiudiButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (nomeOrganizzatoreTextField.getText().isEmpty() && passwordOrganizzatoreField.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(frameOrganizzatore,"Inserire tutti i campi!");
+                } else if (premuto) {
+                    JOptionPane.showMessageDialog(frameOrganizzatore,"Le iscrizioni sono chiuse!");
+                    apertura = false;
+                    controller.setApertura(apertura);
                     frameOrganizzatore.setVisible(false);
                     frame.setVisible(true);
                 }
