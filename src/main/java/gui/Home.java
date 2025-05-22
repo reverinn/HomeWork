@@ -67,9 +67,6 @@ public class Home {
         organizzatoreButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                //creo un nuovo organizzatore che avrà un nome e una password, oltre che un controller ben organizzato
-                Organizzatore organizzatore = new Organizzatore();
-                controllerOrganizzatore = new ControllerOrganizzatore(organizzatore);
                 OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerOrganizzatore);
                 organizzatoreGUI.frameOrganizzatore.setVisible(true);
                 frameHome.setVisible(false);
