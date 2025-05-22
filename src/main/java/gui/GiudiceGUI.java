@@ -35,7 +35,7 @@ public class GiudiceGUI {
                     JOptionPane.showMessageDialog(frameGiudice,"Le iscrizioni sono chiuse!");
                 }
                 else {
-                    if (!nomeGiudiceTextField.getText().isEmpty() || !passwordGiudicePasswordField.getText().isEmpty()) {
+                    if (!nomeGiudiceTextField.getText().isEmpty() && !passwordGiudicePasswordField.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(frameGiudice, "Registrazione avvenuta con successo!");
                         frameGiudice.setVisible(false);
                         frame.setVisible(true);

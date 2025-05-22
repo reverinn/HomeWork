@@ -42,7 +42,7 @@ public class UtenteGUI {
                     JOptionPane.showMessageDialog(frameUtente,"Le iscrizioni sono chiuse!");
                 }
                 else {
-                    if (!nomeUtenteTextField.getText().isEmpty() || !passwordPasswordField.getText().isEmpty()) {
+                    if (!nomeUtenteTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(frameUtente, "Registrazione avvenuta con successo!");
                         frameUtente.setVisible(false);
                         frame.setVisible(true);

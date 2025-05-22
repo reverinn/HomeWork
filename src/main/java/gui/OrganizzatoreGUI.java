@@ -44,7 +44,7 @@ public class OrganizzatoreGUI {
         apriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (nomeOrganizzatoreTextField.getText().isEmpty() || passwordOrganizzatoreField.getText().isEmpty()){
+                if (nomeOrganizzatoreTextField.getText().isEmpty() && passwordOrganizzatoreField.getText().isEmpty()){
                     JOptionPane.showMessageDialog(frameOrganizzatore,"Inserire tutti i campi!");
                 }
                 else if (premuto){
