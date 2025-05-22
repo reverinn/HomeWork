@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class Giudice extends Utente {
+    private Giudice giudice;
     private String nome;
     private String password;
 
@@ -37,8 +38,8 @@ public class Giudice extends Utente {
         this.nome = nome;
     }
 
-    public void getGiudice(JFrame frame, String password, String nome){
-        JOptionPane.showMessageDialog(frame, "Giudice: " + nome + " Password: " + password);
+    public Giudice getGiudice(){
+        return giudice;
     }
 
 }

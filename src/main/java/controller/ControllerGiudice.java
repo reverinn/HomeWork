@@ -11,7 +11,4 @@ public class ControllerGiudice {
     public void setGiudice(String passwordGiudice, String nomeGiudice){
         giudice.setGiudice(passwordGiudice, nomeGiudice);
     }
-    public void mostraGiudice(JFrame frame, String passwordGiudice, String nomeGiudice){
-        giudice.getGiudice(frame, passwordGiudice, nomeGiudice);
-    }
 }

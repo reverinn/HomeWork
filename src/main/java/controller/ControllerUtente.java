@@ -15,9 +15,7 @@ public class ControllerUtente {
     public void setUtente(String passwordUtente, String nomeUtente) {
         utente.setUtente(passwordUtente, nomeUtente);
     }
-    public void mostraUtente(JFrame frame, String passwordUtente, String nomeUtente){
-        JOptionPane.showMessageDialog(frame, "Utente: " + utente.getNomeUtente() + " Password: " + utente.getPasswordUtente());
-    }
+
 
 
 }

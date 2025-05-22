@@ -9,6 +9,8 @@ public class Organizzatore extends Utente {
     private String nome;
     private String password;
     public ArrayList <Giudice> giudicescelto = new ArrayList<>();
+    private Organizzatore organizzatore;
+    private boolean apertura;
 
     //Aggiungo Giudici già esistenti
     public Organizzatore(Giudice a) {
@@ -26,8 +28,16 @@ public class Organizzatore extends Utente {
         this.password = password;
     }
 
-    public void GetOrganizzatore(JFrame frame, String nome, String password){
-        JOptionPane.showMessageDialog(frame, "Organizzatore: " + nome + " Password: " + password);
+    public void setApertura(boolean apertura){
+        this.apertura = apertura;
+    }
+
+    public boolean getApertura(){
+        return apertura;
+    }
+
+    public Organizzatore getOrganizzatore(){
+        return organizzatore;
     }
 
 }

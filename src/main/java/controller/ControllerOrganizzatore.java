@@ -7,6 +7,7 @@ import javax.swing.*;
 
 public class ControllerOrganizzatore {
     private Organizzatore organizzatore;
+    private boolean apertura;
 
     public ControllerOrganizzatore(Organizzatore organizzatore){
         this.organizzatore = organizzatore;
@@ -16,7 +17,20 @@ public class ControllerOrganizzatore {
         organizzatore.setOrganizzatore(passwordOrganizzatore, nomeOrganizzatore);
     }
 
-    public void mostraOrganizzatore(JFrame frame, String passwordOrganizzatore, String nomeOrganizzatore){
-        organizzatore.GetOrganizzatore(frame, passwordOrganizzatore, nomeOrganizzatore);
+    public void setApertura(boolean apertura){
+        organizzatore.setApertura(apertura);
+    }
+
+    public boolean getApertura(){
+        return organizzatore.getApertura();
+    }
+
+    public void Avvio(JFrame frame, boolean apertura){
+        if (getApertura()){
+            JOptionPane.showMessageDialog(frame, "Le iscrizioni sono aperte!");
+        }
+        else{
+            JOptionPane.showMessageDialog(frame, "Le iscrizioni sono chiuse!");
+        }
     }
 }

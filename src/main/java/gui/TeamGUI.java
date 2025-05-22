@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import controller.ControllerOrganizzatore;
 import controller.ControllerTeam;
 
 public class TeamGUI {
@@ -13,7 +14,7 @@ public class TeamGUI {
     private JLabel etselTeam;
     private JButton OKButton;
     public JFrame frameTeam;
-    public TeamGUI(JFrame frame, ControllerTeam controller) {
+    public TeamGUI(JFrame frame, ControllerTeam controller, ControllerOrganizzatore controllerOrganizzatore) {
         frameTeam = new JFrame("Team");
         frameTeam.setContentPane(this.teamPanel);
         frameTeam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,11 +30,15 @@ public class TeamGUI {
         OKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frameTeam,"Scelta avvenuta con successo!");
-                frameTeam.setVisible(false);
-                frame.setVisible(true);
-                String selTeam = comboBox1.getSelectedItem().toString();
-                JOptionPane.showMessageDialog(frameTeam,"Selezionato: " + controller.getScelta(selTeam));
+                if (!controllerOrganizzatore.getApertura()) {
+                    JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");
+                } else {
+                    JOptionPane.showMessageDialog(frameTeam, "Scelta avvenuta con successo!");
+                    frameTeam.setVisible(false);
+                    frame.setVisible(true);
+                    String selTeam = comboBox1.getSelectedItem().toString();
+                    JOptionPane.showMessageDialog(frameTeam, "Selezionato: " + controller.getScelta(selTeam));
+                }
             }
         });
     }
