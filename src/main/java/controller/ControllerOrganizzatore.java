@@ -66,8 +66,6 @@ public class ControllerOrganizzatore {
             apertura = true;
             setApertura(apertura);
             Avvio(frameOrganizzatore);
-            frameOrganizzatore.setVisible(false);
-            frameHome.setVisible(true);
         }
         else{
             JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");
@@ -85,8 +83,6 @@ public class ControllerOrganizzatore {
             JOptionPane.showMessageDialog(frameOrganizzatore,"Le iscrizioni sono chiuse!");
             apertura = false;
             setApertura(apertura);
-            frameOrganizzatore.setVisible(false);
-            frameHome.setVisible(true);
         }
         else{
             JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");

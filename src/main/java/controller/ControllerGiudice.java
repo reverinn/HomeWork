@@ -23,8 +23,6 @@ public class ControllerGiudice {
         } else {
             if (!nomeGiudice.isEmpty() || !passwordGiudice.isEmpty()) {
                 JOptionPane.showMessageDialog(frameGiudice, "Registrazione avvenuta con successo!");
-                frameGiudice.setVisible(false);
-                frameHome.setVisible(true);
                 setGiudice(passwordGiudice, nomeGiudice);
             } else {
                 JOptionPane.showMessageDialog(frameGiudice, "Inserire tutti i campi!");
