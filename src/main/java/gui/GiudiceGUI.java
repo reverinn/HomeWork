@@ -34,6 +34,9 @@ public class GiudiceGUI {
                 if (!controllerOrganizzatore.getApertura()){
                     JOptionPane.showMessageDialog(frameGiudice,"Le iscrizioni sono chiuse!");
                 }
+                else if (nomeGiudiceTextField.getText().toLowerCase().contains(" ") || passwordGiudicePasswordField.getText().toLowerCase().contains(" ")){
+                    JOptionPane.showMessageDialog(frameGiudice, "La password non può contenere spazi iniziali o finali!");
+                }
                 else {
                     if (!nomeGiudiceTextField.getText().isEmpty() && !passwordGiudicePasswordField.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(frameGiudice, "Registrazione avvenuta con successo!");

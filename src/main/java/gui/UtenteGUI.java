@@ -41,6 +41,9 @@ public class UtenteGUI {
                 if (!controllerOrganizzatore.getApertura()){
                     JOptionPane.showMessageDialog(frameUtente,"Le iscrizioni sono chiuse!");
                 }
+                else if (nomeUtenteTextField.getText().toLowerCase().contains(" ") || passwordPasswordField.getText().toLowerCase().contains(" ")){
+                    JOptionPane.showMessageDialog(frameUtente, "La password non può contenere spazi iniziali o finali!");
+                }
                 else {
                     if (!nomeUtenteTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty()) {
                         JOptionPane.showMessageDialog(frameUtente, "Registrazione avvenuta con successo!");

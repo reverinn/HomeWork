@@ -34,11 +34,16 @@ public class OrganizzatoreGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                premuto = true;
-                JOptionPane.showMessageDialog(frameOrganizzatore,"Registrazione avvenuta con successo!");
-                String nomeOrganizzatore = nomeOrganizzatoreTextField.getText();
-                String passwordOrganizzatore = passwordOrganizzatoreField.getText();
-                controller.setOrganizzatore(passwordOrganizzatore, nomeOrganizzatore);
+                if (nomeOrganizzatoreTextField.getText().toLowerCase().contains(" ") || passwordOrganizzatoreField.getText().toLowerCase().contains(" ")){
+                    JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
+                }
+                else {
+                    premuto = true;
+                    JOptionPane.showMessageDialog(frameOrganizzatore, "Registrazione avvenuta con successo!");
+                    String nomeOrganizzatore = nomeOrganizzatoreTextField.getText();
+                    String passwordOrganizzatore = passwordOrganizzatoreField.getText();
+                    controller.setOrganizzatore(passwordOrganizzatore, nomeOrganizzatore);
+                }
             }
         });
         apriButton.addActionListener(new ActionListener() {
