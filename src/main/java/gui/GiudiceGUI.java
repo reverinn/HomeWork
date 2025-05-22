@@ -1,12 +1,12 @@
 package gui;
 
-import controller.Controller;
+import controller.ControllerGiudice;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Giudici {
+public class GiudiceGUI {
     private JPanel panelGiudice;
     private JButton closeButton;
     private JTextField textField1;
@@ -14,7 +14,7 @@ public class Giudici {
     private JLabel etNomeGiudice;
     private JButton confermaButton;
     public JFrame frameGiudice;
-    public Giudici(JFrame frame, Controller controller) {
+    public GiudiceGUI(JFrame frame, ControllerGiudice controller) {
         frameGiudice = new JFrame("Giudici");
         frameGiudice.setContentPane(this.panelGiudice);
         frameGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,6 +25,18 @@ public class Giudici {
             public void actionPerformed(ActionEvent e) {
                 frameGiudice.setVisible(false);
                 frame.setVisible(true);
+            }
+        });
+        confermaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frameGiudice,"Registrazione avvenuta con successo!");
+                frameGiudice.setVisible(false);
+                frame.setVisible(true);
+                String nomeGiudice = textField1.getText();
+                String passwordGiudice = passwordField1.getText();
+                controller.setGiudice(passwordGiudice, nomeGiudice);
+                controller.mostraGiudice(frame, passwordGiudice, nomeGiudice);
             }
         });
     }

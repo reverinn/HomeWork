@@ -1,7 +1,8 @@
 package gui;
 
 
-import controller.Controller;
+import controller.*;
+import model.*;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +16,10 @@ public class Home {
     private JButton organizzatoreButton;
     private JLabel TITOLO;
     private static JFrame frameHome;
-    private Controller controller;
+    private ControllerUtente controllerUtente;
+    private ControllerTeam controllerTeam;
+    private ControllerGiudice controllerGiudici;
+    private ControllerOrganizzatore controllerOrganizzatore;
 
 
     public static void main(String[] args) {
@@ -27,11 +31,12 @@ public class Home {
     }
 
     public Home() {
-        controller = new Controller();
         utenteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Utente utenteGUI = new Utente(frameHome, controller);
+                Utente utente = new Utente();
+                controllerUtente = new ControllerUtente(utente);
+                UtenteGUI utenteGUI = new UtenteGUI(frameHome, controllerUtente);
                 utenteGUI.frameUtente.setVisible(true);
                 frameHome.setVisible(false);
 
@@ -40,7 +45,9 @@ public class Home {
         teamButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Team teamGUI = new Team(frameHome, controller);
+                Team team = new Team();
+                controllerTeam = new ControllerTeam(team);
+                TeamGUI teamGUI = new TeamGUI(frameHome, controllerTeam);
                 teamGUI.frameTeam.setVisible(true);
                 frameHome.setVisible(false);
             }
@@ -48,7 +55,9 @@ public class Home {
         giudiciButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Giudici giudiciGUI = new Giudici(frameHome, controller);
+                Giudice giudice = new Giudice();
+                controllerGiudici = new ControllerGiudice(giudice);
+                GiudiceGUI giudiciGUI = new GiudiceGUI(frameHome, controllerGiudici);
                 giudiciGUI.frameGiudice.setVisible(true);
                 frameHome.setVisible(false);
             }
@@ -56,7 +65,10 @@ public class Home {
         organizzatoreButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                Organizzatore organizzatoreGUI = new Organizzatore(frameHome, controller);
+                //creo un nuovo organizzatore che avrà un nome e una password, oltre che un controller ben organizzato
+                Organizzatore organizzatore = new Organizzatore();
+                controllerOrganizzatore = new ControllerOrganizzatore(organizzatore);
+                OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerOrganizzatore);
                 organizzatoreGUI.frameOrganizzatore.setVisible(true);
                 frameHome.setVisible(false);
             }

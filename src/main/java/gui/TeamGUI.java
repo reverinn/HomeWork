@@ -3,16 +3,17 @@ package gui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import controller.Controller;
 
-public class Team {
+import controller.ControllerTeam;
+
+public class TeamGUI {
     private JPanel teamPanel;
     private JButton closeButton;
     private JComboBox comboBox1;
     private JLabel etselTeam;
     private JButton OKButton;
     public JFrame frameTeam;
-    public Team(JFrame frame, Controller controller) {
+    public TeamGUI(JFrame frame, ControllerTeam controller) {
         frameTeam = new JFrame("Team");
         frameTeam.setContentPane(this.teamPanel);
         frameTeam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,7 +32,8 @@ public class Team {
                 JOptionPane.showMessageDialog(frameTeam,"Scelta avvenuta con successo!");
                 frameTeam.setVisible(false);
                 frame.setVisible(true);
-
+                String selTeam = comboBox1.getSelectedItem().toString();
+                JOptionPane.showMessageDialog(frameTeam,"Selezionato: " + controller.getScelta(selTeam));
             }
         });
     }

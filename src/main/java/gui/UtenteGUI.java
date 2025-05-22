@@ -1,6 +1,6 @@
 package gui;
 
-import controller.Controller;
+import controller.ControllerUtente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 
 
-public class Utente {
+public class UtenteGUI {
 
     private JPanel panelUtente;
     private JButton closeButton;
@@ -20,7 +20,7 @@ public class Utente {
     private JButton confermaButton;
     public JFrame frameUtente;
 
-    public Utente(JFrame frame, Controller controller) {
+    public UtenteGUI(JFrame frame, ControllerUtente controller) {
         frameUtente = new JFrame("Utente");
         frameUtente.setContentPane(this.panelUtente);
         frameUtente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,9 +33,17 @@ public class Utente {
                 frame.setVisible(true);
             }
         });
-        passwordPasswordField.addActionListener(new ActionListener() {
+        confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frameUtente,"Registrazione avvenuta con successo!");
+                frameUtente.setVisible(false);
+                frame.setVisible(true);
+                String nomeUtente = nomeUtenteTextField.getText();
+                String passwordUtente = passwordPasswordField.getText();
+                controller.setUtente(passwordUtente, nomeUtente);
+                //questo per debug
+                controller.mostraUtente(frameUtente, passwordUtente, nomeUtente);
             }
         });
     }

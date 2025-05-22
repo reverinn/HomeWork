@@ -8,6 +8,8 @@ public class Team {
     public int dimensioneMaxTeam;
     public String nomeSquadra;
 
+    public Team () {}
+
     //Aggregato di classe Utente
     ArrayList <Utente> utentiComponenti = new ArrayList<>();
     public Team(Utente utente, int dimensioneMaxTeam, String nomeSquadra) {
@@ -23,4 +25,5 @@ public class Team {
         this.piattaforma = piattaforma;
         documentoCaricato.add(d);
     }
+
 }

@@ -1,9 +1,13 @@
 package model;
 
 import model.*;
+
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Giudice extends Utente {
+    private String nome;
+    private String password;
 
     //Associazione con Classe Organizzatore
     public Giudice(Organizzatore o) {
@@ -24,6 +28,17 @@ public class Giudice extends Utente {
     public Giudice(Voto voto, Piattaforma piattaforma) {
         votiDati.add(voto); //aggiunge un voto alla lista dei voti da spedire alla piattaforma
         this.piattaforma = piattaforma;
+    }
+
+    public Giudice(){}
+
+    public void setGiudice(String password, String nome){
+        this.password = password;
+        this.nome = nome;
+    }
+
+    public void getGiudice(JFrame frame, String password, String nome){
+        JOptionPane.showMessageDialog(frame, "Giudice: " + nome + " Password: " + password);
     }
 
 }

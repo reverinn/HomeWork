@@ -5,6 +5,7 @@ import model.Piattaforma;
 public class Utente {
     protected int idUtente;
     private String passwordUtente;
+    private String nomeUtente;
 
     //costruttore per classi figlie
     public Utente() {}
@@ -16,8 +17,17 @@ public class Utente {
         this.piattaforma = piattaforma;
     }
 
-    public void setPasswordUtente(String passwordUtente) {
+    public void setUtente(String passwordUtente, String nomeUtente ) {
         this.passwordUtente = passwordUtente;
+        this.nomeUtente = nomeUtente;
+    }
+
+    public String getNomeUtente(){
+        return nomeUtente;
+    }
+
+    public String getPasswordUtente(){
+        return passwordUtente;
     }
 
 }
