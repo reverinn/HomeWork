@@ -38,24 +38,7 @@ public class UtenteGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!controllerOrganizzatore.getApertura()){
-                    JOptionPane.showMessageDialog(frameUtente,"Le iscrizioni sono chiuse!");
-                }
-                else if (nomeUtenteTextField.getText().toLowerCase().contains(" ") || passwordPasswordField.getText().toLowerCase().contains(" ")){
-                    JOptionPane.showMessageDialog(frameUtente, "La password non può contenere spazi iniziali o finali!");
-                }
-                else {
-                    if (!nomeUtenteTextField.getText().isEmpty() && !passwordPasswordField.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(frameUtente, "Registrazione avvenuta con successo!");
-                        frameUtente.setVisible(false);
-                        frame.setVisible(true);
-                        String nomeUtente = nomeUtenteTextField.getText();
-                        String passwordUtente = passwordPasswordField.getText();
-                        controller.setUtente(passwordUtente, nomeUtente);
-                    } else {
-                        JOptionPane.showMessageDialog(frameUtente, "Inserire tutti i campi!");
-                    }
-                }
+               controller.controllaConferma(frame, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore.getPremuto(), controllerOrganizzatore);
             }
         });
     }

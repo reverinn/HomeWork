@@ -10,7 +10,7 @@ import controller.ControllerTeam;
 public class TeamGUI {
     private JPanel teamPanel;
     private JButton closeButton;
-    private JComboBox comboBox1;
+    private JComboBox teamBox;
     private JLabel etselTeam;
     private JButton OKButton;
     public JFrame frameTeam;
@@ -30,15 +30,7 @@ public class TeamGUI {
         OKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!controllerOrganizzatore.getApertura()) {
-                    JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");
-                } else {
-                    JOptionPane.showMessageDialog(frameTeam, "Scelta avvenuta con successo!");
-                    frameTeam.setVisible(false);
-                    frame.setVisible(true);
-                    String selTeam = comboBox1.getSelectedItem().toString();
-                    JOptionPane.showMessageDialog(frameTeam, "Selezionato: " + controller.getScelta(selTeam));
-                }
+                controller.controllaOK(frame,frameTeam, teamBox.getSelectedItem().toString(), controllerOrganizzatore);
             }
         });
     }

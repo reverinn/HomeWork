@@ -15,6 +15,7 @@ public class OrganizzatoreGUI {
     private JButton confermaButton;
     private JButton apriButton;
     private JButton chiudiButton;
+    private JButton loginButton;
     public JFrame frameOrganizzatore;
     private boolean apertura = false;
     private boolean premuto = false;
@@ -35,51 +36,24 @@ public class OrganizzatoreGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (nomeOrganizzatoreTextField.getText().toLowerCase().contains(" ") || passwordOrganizzatoreField.getText().toLowerCase().contains(" ")){
-                    JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
-                }
-                else {
-                    premuto = true;
-                    JOptionPane.showMessageDialog(frameOrganizzatore, "Registrazione avvenuta con successo!");
-                    String nomeOrganizzatore = nomeOrganizzatoreTextField.getText();
-                    String passwordOrganizzatore = passwordOrganizzatoreField.getText();
-                    controller.setOrganizzatore(passwordOrganizzatore, nomeOrganizzatore);
-                }
+                controller.controllaConferma(frameOrganizzatore, nomeOrganizzatoreTextField.toString(), passwordOrganizzatoreField.getText(), premuto);
             }
         });
         apriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (nomeOrganizzatoreTextField.getText().isEmpty() && passwordOrganizzatoreField.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(frameOrganizzatore,"Inserire tutti i campi!");
-                }
-                else if (premuto){
-                    apertura = true;
-                    controller.setApertura(apertura);
-                    controller.Avvio(frame, apertura);
-                    frameOrganizzatore.setVisible(false);
-                    frame.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");
-                }
+                controller.controllaApertura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText(), premuto);
             }
         });
         chiudiButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (nomeOrganizzatoreTextField.getText().isEmpty() && passwordOrganizzatoreField.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(frameOrganizzatore,"Inserire tutti i campi!");
-                } else if (premuto) {
-                    JOptionPane.showMessageDialog(frameOrganizzatore,"Le iscrizioni sono chiuse!");
-                    apertura = false;
-                    controller.setApertura(apertura);
-                    frameOrganizzatore.setVisible(false);
-                    frame.setVisible(true);
-                }
-                else{
-                    JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");
-                }
+               controller.controllaChiusura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText(), premuto);
+            }
+        });
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
             }
         });
     }

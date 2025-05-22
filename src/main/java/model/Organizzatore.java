@@ -40,4 +40,12 @@ public class Organizzatore extends Utente {
         return organizzatore;
     }
 
+    public String getNomeOrganizzatore(){
+        return nome;
+    }
+
+    public String getPasswordOrganizzatore(){
+        return password;
+    }
+
 }

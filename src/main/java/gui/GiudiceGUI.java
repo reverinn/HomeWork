@@ -31,24 +31,7 @@ public class GiudiceGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!controllerOrganizzatore.getApertura()){
-                    JOptionPane.showMessageDialog(frameGiudice,"Le iscrizioni sono chiuse!");
-                }
-                else if (nomeGiudiceTextField.getText().toLowerCase().contains(" ") || passwordGiudicePasswordField.getText().toLowerCase().contains(" ")){
-                    JOptionPane.showMessageDialog(frameGiudice, "La password non può contenere spazi iniziali o finali!");
-                }
-                else {
-                    if (!nomeGiudiceTextField.getText().isEmpty() && !passwordGiudicePasswordField.getText().isEmpty()) {
-                        JOptionPane.showMessageDialog(frameGiudice, "Registrazione avvenuta con successo!");
-                        frameGiudice.setVisible(false);
-                        frame.setVisible(true);
-                        String nomeGiudice = GiudiceGUI.this.nomeGiudiceTextField.getText();
-                        String passwordGiudice = passwordGiudicePasswordField.getText();
-                        controller.setGiudice(passwordGiudice, nomeGiudice);
-                    } else {
-                        JOptionPane.showMessageDialog(frameGiudice, "Inserire tutti i campi!");
-                    }
-                }
+                controller.controllaConferma(frame, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
             }
         });
     }
