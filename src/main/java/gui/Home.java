@@ -20,6 +20,7 @@ public class Home {
     private ControllerTeam controllerTeam;
     private ControllerGiudice controllerGiudici;
     private ControllerOrganizzatore controllerOrganizzatore;
+    private ControllerLoginOrg controllerLoginOrg;
 
 
     public static void main(String[] args) {

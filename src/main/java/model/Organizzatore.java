@@ -40,6 +40,15 @@ public class Organizzatore extends Utente {
         return organizzatore;
     }
 
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public String getNomeOrganizzatore(){
         return nome;
     }
@@ -47,5 +56,6 @@ public class Organizzatore extends Utente {
     public String getPasswordOrganizzatore(){
         return password;
     }
+
 
 }

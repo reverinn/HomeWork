@@ -67,7 +67,7 @@ public class ControllerOrganizzatore {
             setApertura(apertura);
             Avvio(frameOrganizzatore);
         }
-        else{
+        else if (!getPremuto()){
             JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");
         }
     }
@@ -89,7 +89,16 @@ public class ControllerOrganizzatore {
         }
     }
 
+    public void controllaLogin(JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore){
+        if (getPremuto()){
+            frameOrganizzatore.setVisible(false);
+        }
+        else{
+            JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter accedere!");
+        }
 
+
+    }
 
 
 

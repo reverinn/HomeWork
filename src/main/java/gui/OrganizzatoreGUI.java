@@ -4,7 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import controller.ControllerLoginOrg;
 import controller.ControllerOrganizzatore;
+import model.Organizzatore;
 
 public class OrganizzatoreGUI {
     private JPanel panelOrganizzatore;
@@ -18,7 +20,8 @@ public class OrganizzatoreGUI {
     private JButton loginButton;
     public JFrame frameOrganizzatore;
     private boolean premuto = false;
-    private LoginOrganizzatore loginOrganizzatore;
+    private LoginOrganizzatoreGUI loginOrganizzatore;
+    private ControllerLoginOrg controllerLoginOrg;
 
     public OrganizzatoreGUI(JFrame frame, ControllerOrganizzatore controller) {
         frameOrganizzatore = new JFrame("Organizzatore");
@@ -54,10 +57,9 @@ public class OrganizzatoreGUI {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                loginOrganizzatore=new LoginOrganizzatore(frameOrganizzatore,controller);
-
-
-
+                Organizzatore organizzatore = new Organizzatore();
+                ControllerLoginOrg controllerLoginOrg = new ControllerLoginOrg(organizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
+                loginOrganizzatore=new LoginOrganizzatoreGUI(frameOrganizzatore,controller, controllerLoginOrg);
             }
         });
     }
