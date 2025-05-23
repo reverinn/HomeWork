@@ -69,7 +69,6 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerOrganizzatore, organizzatore);
-                System.out.println(organizzatore);
                 organizzatoreGUI.frameOrganizzatore.setVisible(true);
                 frameHome.setVisible(false);
             }
