@@ -21,9 +21,9 @@ public class ControllerLoginOrg {
         return loginFatto;
     }
 
-    public void ControllaPassword(JFrame frameOrganizzatore, JFrame frameLogin, Organizzatore organizzatore, ControllerOrganizzatore controllerOrganizzatore){
-        if(organizzatore.getNomeOrganizzatore().equals(organizzatore.getNomeOrganizzatore()) && organizzatore.getPasswordOrganizzatore().equals(organizzatore.getPasswordOrganizzatore())) {
-            JOptionPane.showMessageDialog(frameLogin, "Login avvenuto con successo!\nle vostre credenziali: " + organizzatore.getNomeOrganizzatore() + " " + organizzatore.getPasswordOrganizzatore() + "\nselezionare le iscrizioni che si vogliono aprire!");
+    public void ControllaPassword(JFrame frameOrganizzatore, JFrame frameLogin, Organizzatore organizzatore, ControllerOrganizzatore controllerOrganizzatore, String nome, String password){
+        if(nome.equals(organizzatore.getNomeOrganizzatore()) && password.equals(organizzatore.getPasswordOrganizzatore())) {
+            JOptionPane.showMessageDialog(frameLogin, "Login avvenuto con successo!\nle vostre credenziali: " + organizzatore.getNomeOrganizzatore() + " " + organizzatore.getPasswordOrganizzatore() + "\ne\' possibile aprire le iscrizioni ora!");
             loginFatto = true;
             controllerOrganizzatore.setApertura(true);
         }
