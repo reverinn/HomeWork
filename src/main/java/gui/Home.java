@@ -15,13 +15,13 @@ public class Home {
     private JButton giudiciButton;
     private JButton organizzatoreButton;
     private JLabel TITOLO;
-    private JButton mostraClassificaButton;
     private static JFrame frameHome;
     private ControllerUtente controllerUtente;
     private ControllerTeam controllerTeam;
-    private ControllerGiudice controllerGiudici;
+    private ControllerGiudice controllerGiudice;
     private ControllerOrganizzatore controllerOrganizzatore;
     private ControllerLoginOrg controllerLoginOrg;
+    private ControllerLoginGiudice controllerLoginGiudice;
 
 
     public static void main(String[] args) {
@@ -60,8 +60,8 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Giudice giudice = new Giudice();
-                controllerGiudici = new ControllerGiudice(giudice);
-                GiudiceGUI giudiciGUI = new GiudiceGUI(frameHome, controllerGiudici, controllerOrganizzatore);
+                controllerGiudice = new ControllerGiudice(giudice);
+                GiudiceGUI giudiciGUI = new GiudiceGUI(frameHome, controllerGiudice, controllerOrganizzatore);
                 giudiciGUI.frameGiudice.setVisible(true);
                 frameHome.setVisible(false);
             }

@@ -1,11 +1,14 @@
 package controller;
 
 import model.Giudice;
+import model.Voto;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class ControllerGiudice {
     private Giudice giudice;
+    private ArrayList<Voto> votiClassifica = new ArrayList<>();
 
     public ControllerGiudice(Giudice giudice) {
         this.giudice = giudice;
@@ -29,4 +32,6 @@ public class ControllerGiudice {
             }
         }
     }
+
+
 }

@@ -103,4 +103,5 @@ public class ControllerOrganizzatore {
     public Organizzatore getOrganizzatore() {
         return organizzatore.getOrganizzatore();
     }
+
 }

@@ -18,6 +18,7 @@ public class LoginGiudiceGUI {
     private JComboBox votoBox;
     private JComboBox teamDaVotareBox;
     private JButton OKButton;
+    private JButton pubblicaClassificheButton;
     private JFrame frameLoginGiudice;
     public LoginGiudiceGUI(JFrame frameGiudice, ControllerGiudice controllerGiudice, ControllerLoginGiudice controllerLoginGiudice, ControllerOrganizzatore controllerOrganizzatore) {
         frameLoginGiudice=new JFrame("Login Giudice");
@@ -49,6 +50,12 @@ public class LoginGiudiceGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controllerLoginGiudice.aggiungiVoto(frameLoginGiudice, teamDaVotareBox.getSelectedItem().toString(), votoBox.getSelectedItem().toString());
+            }
+        });
+        pubblicaClassificheButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controllerLoginGiudice.Classifica(frameLoginGiudice);
             }
         });
     }

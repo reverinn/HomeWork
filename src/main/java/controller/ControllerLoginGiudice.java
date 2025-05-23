@@ -16,6 +16,7 @@ public class ControllerLoginGiudice {
         giudice.setGiudice(password, nome);
     }
 
+    public ControllerLoginGiudice(){}
 
     public boolean getLoginFattoGiudice(){
         return loginFattoGiudice;
@@ -46,10 +47,22 @@ public class ControllerLoginGiudice {
     public void aggiungiVoto(JFrame frameLogin, String teamScelto, String votoDato){
         controllaLogin(frameLogin);
         voti.add(new Voto(teamScelto, votoDato) );
+        voti.add(new Voto(teamScelto, votoDato) );
+        voti.add(new Voto(teamScelto, votoDato) );
+        voti.add(new Voto(teamScelto, votoDato) );
     }
 
     public ArrayList<Voto> getVoti() {
         return voti;
+    }
+
+    public void Classifica(JFrame frameLoginGiudice){
+        int i = 0;
+        controllaLogin(frameLoginGiudice);
+        ArrayList<Voto> votiClassifica = voti.stream().filter(voto -> voto.votoAsInt() > 0).collect(Collectors.toCollection(ArrayList::new));
+        votiClassifica.sort((v1, v2) -> v2.votoAsInt() - v1.votoAsInt());
+        votiClassifica.stream().collect(Collectors.toCollection(ArrayList::new));
+        JOptionPane.showMessageDialog(frameLoginGiudice, "Il Team vincitore: \n"+ votiClassifica.get(i));
     }
 
 }

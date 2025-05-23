@@ -33,4 +33,8 @@ public class Voto {
     public int votoAsInt(){
         return Integer.parseInt(valoreVoto);
     }
+
+    public String toString(){
+        return "nome: " + nomeSquadra + " voto: " + valoreVoto;
+    }
 }
