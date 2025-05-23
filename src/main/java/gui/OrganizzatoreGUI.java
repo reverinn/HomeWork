@@ -15,20 +15,23 @@ public class OrganizzatoreGUI {
     private JPasswordField passwordOrganizzatoreField;
     private JLabel etNomeOrganizzatore;
     private JButton confermaButton;
-    private JButton apriButton;
-    private JButton chiudiButton;
     private JButton loginButton;
     public JFrame frameOrganizzatore;
     private boolean premuto = false;
     private LoginOrganizzatoreGUI loginOrganizzatore;
     private ControllerLoginOrg controllerLoginOrg;
+    private ControllerOrganizzatore controllerOrganizzatore;
+    private Organizzatore organizzatore;
 
-    public OrganizzatoreGUI(JFrame frame, ControllerOrganizzatore controller) {
+    public OrganizzatoreGUI(JFrame frame, ControllerOrganizzatore controllerOrganizzatore, Organizzatore organizzatore) {
         frameOrganizzatore = new JFrame("Organizzatore");
         frameOrganizzatore.setContentPane(this.panelOrganizzatore);
         frameOrganizzatore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameOrganizzatore.setSize(800,800);
         frameOrganizzatore.setVisible(true);
+        this.controllerOrganizzatore = controllerOrganizzatore;
+        this.organizzatore = organizzatore;
+        controllerLoginOrg = new ControllerLoginOrg(organizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,27 +42,18 @@ public class OrganizzatoreGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.controllaConferma(frameOrganizzatore, nomeOrganizzatoreTextField.toString(), passwordOrganizzatoreField.getText(), premuto);
-            }
-        });
-        apriButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.controllaApertura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
-            }
-        });
-        chiudiButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               controller.controllaChiusura(frame, frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
+                controllerOrganizzatore.controllaConferma(frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText(), premuto, controllerOrganizzatore);
             }
         });
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Organizzatore organizzatore = new Organizzatore();
-                ControllerLoginOrg controllerLoginOrg = new ControllerLoginOrg(organizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
-                loginOrganizzatore=new LoginOrganizzatoreGUI(frameOrganizzatore,controller, controllerLoginOrg);
+                String nome = nomeOrganizzatoreTextField.getText();
+                String password = passwordOrganizzatoreField.getText();
+
+                organizzatore.setOrganizzatore(nome, password);
+                controllerLoginOrg = new ControllerLoginOrg(organizzatore, nome, password);
+                loginOrganizzatore = new LoginOrganizzatoreGUI(frameOrganizzatore, controllerOrganizzatore, controllerLoginOrg, organizzatore);
             }
         });
     }

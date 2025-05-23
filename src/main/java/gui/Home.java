@@ -68,7 +68,8 @@ public class Home {
         organizzatoreButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerOrganizzatore);
+                OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerOrganizzatore, organizzatore);
+                System.out.println(organizzatore);
                 organizzatoreGUI.frameOrganizzatore.setVisible(true);
                 frameHome.setVisible(false);
             }

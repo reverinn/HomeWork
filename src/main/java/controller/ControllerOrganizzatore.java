@@ -5,6 +5,7 @@ import model.Organizzatore;
 import javax.swing.*;
 
 public class ControllerOrganizzatore {
+    private ControllerLoginOrg controllerLoginOrg;
     private Organizzatore organizzatore;
     private boolean apertura;
     private boolean premuto = false;
@@ -13,8 +14,17 @@ public class ControllerOrganizzatore {
         this.organizzatore = organizzatore;
     }
 
-    public void setOrganizzatore(String passwordOrganizzatore, String nomeOrganizzatore) {
-        organizzatore.setOrganizzatore(passwordOrganizzatore, nomeOrganizzatore);
+
+    public void setOrganizzatore(String nomeOrganizzatore, String passwordOrganizzatore) {
+        organizzatore.setOrganizzatore(nomeOrganizzatore, passwordOrganizzatore);
+    }
+
+    public String getNomeOrganizzatore(){
+        return organizzatore.getNomeOrganizzatore();
+    }
+
+    public String getPasswordOrganizzatore(){
+        return organizzatore.getPasswordOrganizzatore();
     }
 
     public void setApertura(boolean apertura) {
@@ -41,7 +51,7 @@ public class ControllerOrganizzatore {
         }
     }
 
-    public void controllaConferma(JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore, boolean premuto) {
+    public void controllaConferma(JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore, boolean premuto, ControllerOrganizzatore controllerOrganizzatore) {
         if (nomeOrganizzatore.toLowerCase().contains(" ") || passwordOrganizzatore.toLowerCase().contains(" ")) {
             JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
         }
@@ -52,27 +62,28 @@ public class ControllerOrganizzatore {
             premuto = true;
             setPremuto(premuto);
             JOptionPane.showMessageDialog(frameOrganizzatore, "Iscrizione avvenuta con successo!");
+            controllerOrganizzatore.setOrganizzatore(nomeOrganizzatore, passwordOrganizzatore);
         }
     }
 
-    public void controllaApertura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore){
+    public void controllaApertura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore, ControllerLoginOrg controllerLoginOrg){
         if (nomeOrganizzatore.toLowerCase().contains(" ") || passwordOrganizzatore.toLowerCase().contains(" ")) {
             JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
         }
         else if (nomeOrganizzatore.isEmpty() && passwordOrganizzatore.isEmpty()){
             JOptionPane.showMessageDialog(frameOrganizzatore,"Inserire tutti i campi!");
         }
-        else if (getPremuto()){
+        else if (getPremuto() && controllerLoginOrg.getLoginFatto()){
             apertura = true;
             setApertura(apertura);
             Avvio(frameOrganizzatore);
         }
-        else if (!getPremuto()){
-            JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");
+        else if (!getPremuto() || !controllerLoginOrg.getLoginFatto()){
+            JOptionPane.showMessageDialog(frameOrganizzatore,"Qualcosa è andato storto! forse hai dimenticato di premere conferma o di fare il login...:(");
         }
     }
 
-    public void controllaChiusura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore){
+    public void controllaChiusura(JFrame frameHome, JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore, ControllerLoginOrg controllerLoginOrg){
         if (nomeOrganizzatore.toLowerCase().contains(" ") || passwordOrganizzatore.toLowerCase().contains(" ")) {
             JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
         }
@@ -84,22 +95,12 @@ public class ControllerOrganizzatore {
             apertura = false;
             setApertura(apertura);
         }
-        else{
-            JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter aprire le iscrizioni!");
+        else if (!getPremuto() || !controllerLoginOrg.getLoginFatto()){
+            JOptionPane.showMessageDialog(frameOrganizzatore,"Qualcosa è andato storto! forse hai dimenticato di premere conferma o di fare il login...:(");
         }
     }
 
-    public void controllaLogin(JFrame frameOrganizzatore, String nomeOrganizzatore, String passwordOrganizzatore){
-        if (getPremuto()){
-            frameOrganizzatore.setVisible(false);
-        }
-        else{
-            JOptionPane.showMessageDialog(frameOrganizzatore,"Premere conferma prima di poter accedere!");
-        }
-
-
+    public Organizzatore getOrganizzatore() {
+        return organizzatore.getOrganizzatore();
     }
-
-
-
 }
