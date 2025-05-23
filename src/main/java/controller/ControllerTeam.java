@@ -22,4 +22,13 @@ public class ControllerTeam {
             JOptionPane.showMessageDialog(frameTeam, "Selezionato: " + getScelta(selTeam));
         }
     }
+
+    public void controllaCaricamento(JFrame frameTeam, ControllerOrganizzatore controllerOrganizzatore){
+        if (!controllerOrganizzatore.getApertura()) {
+            JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");
+        } else {
+            JOptionPane.showMessageDialog(frameTeam, "Documento inviato con successo!");
+            frameTeam.setVisible(false);
+        }
+    }
 }

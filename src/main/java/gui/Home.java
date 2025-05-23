@@ -15,6 +15,7 @@ public class Home {
     private JButton giudiciButton;
     private JButton organizzatoreButton;
     private JLabel TITOLO;
+    private JButton mostraClassificaButton;
     private static JFrame frameHome;
     private ControllerUtente controllerUtente;
     private ControllerTeam controllerTeam;

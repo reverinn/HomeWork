@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import model.*;
 
 public class Voto {
-    public int valoreVoto;
+    public String valoreVoto;
     private int idGiudice; //riconoscitivo del singolo giudice che da il voto
     public String nomeSquadra;
 
@@ -17,4 +17,20 @@ public class Voto {
         this.giudice = giudice;
     }
 
+    public Voto(String squadra, String ValoreVoto){
+        this.nomeSquadra = squadra;
+        this.valoreVoto = ValoreVoto;
+    }
+
+    public String getValoreVoto() {
+        return valoreVoto;
+    }
+
+    public String getNomeSquadra() {
+        return nomeSquadra;
+    }
+
+    public int votoAsInt(){
+        return Integer.parseInt(valoreVoto);
+    }
 }

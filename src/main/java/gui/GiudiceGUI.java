@@ -1,7 +1,9 @@
 package gui;
 
 import controller.ControllerGiudice;
+import controller.ControllerLoginGiudice;
 import controller.ControllerOrganizzatore;
+import model.Giudice;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,13 +18,19 @@ public class GiudiceGUI {
     private JButton confermaButton;
     private JButton seiGiaIscrittoFaiButton;
     public JFrame frameGiudice;
-    private LoginGiudice loginGiudice;
-    public GiudiceGUI(JFrame frame, ControllerGiudice controller, ControllerOrganizzatore controllerOrganizzatore) {
+    private LoginGiudiceGUI loginGiudice;
+    private ControllerLoginGiudice controllerLoginGiudice;
+    private Giudice giudice;
+    private String nomeGiudice;
+    private String passwordGiudice;
+
+    public GiudiceGUI(JFrame frame, ControllerGiudice controllerGiudice, ControllerOrganizzatore controllerOrganizzatore) {
         frameGiudice = new JFrame("Giudici");
         frameGiudice.setContentPane(this.panelGiudice);
         frameGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameGiudice.setSize(800,800);
         frameGiudice.setVisible(true);
+        giudice = new Giudice();
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -33,13 +41,16 @@ public class GiudiceGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.controllaConferma(frame, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
+                controllerGiudice.controllaConferma(frame, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
+                nomeGiudice = nomeGiudiceTextField.getText();
+                passwordGiudice = passwordGiudicePasswordField.getText();
+                controllerLoginGiudice = new ControllerLoginGiudice(giudice, nomeGiudice, passwordGiudice);
             }
         });
         seiGiaIscrittoFaiButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                loginGiudice=new LoginGiudice(frameGiudice,controller);
+                loginGiudice=new LoginGiudiceGUI(frameGiudice, controllerGiudice, controllerLoginGiudice, controllerOrganizzatore);
             }
         });
     }

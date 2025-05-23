@@ -14,9 +14,8 @@ public class TeamGUI {
     private JLabel etselTeam;
     private JButton OKButton;
     private JButton CARICADOCUMENTOButton;
-    private JButton VISUALIZZAVOTOButton;
     public JFrame frameTeam;
-    public TeamGUI(JFrame frame, ControllerTeam controller, ControllerOrganizzatore controllerOrganizzatore) {
+    public TeamGUI(JFrame frame, ControllerTeam controllerTeam, ControllerOrganizzatore controllerOrganizzatore) {
         frameTeam = new JFrame("Team");
         frameTeam.setContentPane(this.teamPanel);
         frameTeam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,7 +31,13 @@ public class TeamGUI {
         OKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.controllaOK(frame,frameTeam, teamBox.getSelectedItem().toString(), controllerOrganizzatore);
+                controllerTeam.controllaOK(frame,frameTeam, teamBox.getSelectedItem().toString(), controllerOrganizzatore);
+            }
+        });
+        CARICADOCUMENTOButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controllerTeam.controllaCaricamento(frameTeam, controllerOrganizzatore);
             }
         });
     }
