@@ -12,6 +12,7 @@ public class ControllerTeam {
     public void setScelta(String scelta) { this.scelta = scelta; }
     public String getScelta(String scelta) { return scelta; }
 
+    //permette di confermare la scelta se niente è andato storto
     public void controllaOK(JFrame frameHome, JFrame frameTeam, String selTeam, ControllerOrganizzatore controllerOrganizzatore){
         if (!controllerOrganizzatore.getApertura()) {
             JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");
@@ -23,6 +24,7 @@ public class ControllerTeam {
         }
     }
 
+    //permette di inviare il documento al team se le iscrizioni sono state aperte dall'organizzatore
     public void controllaCaricamento(JFrame frameTeam, ControllerOrganizzatore controllerOrganizzatore){
         if (!controllerOrganizzatore.getApertura()) {
             JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");

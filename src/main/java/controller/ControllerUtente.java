@@ -15,6 +15,8 @@ public class ControllerUtente {
         utente.setUtente(passwordUtente, nomeUtente);
     }
 
+
+    //metodo che controlla i vari casi del pulsante conferma
     public void controllaConferma(JFrame frameHome, JFrame frameUtente, String nomeUtente, String passwordUtente, ControllerOrganizzatore controllerOrganizzatore) {
         if (!controllerOrganizzatore.getApertura()){
             JOptionPane.showMessageDialog(frameUtente,"Le iscrizioni sono chiuse!");

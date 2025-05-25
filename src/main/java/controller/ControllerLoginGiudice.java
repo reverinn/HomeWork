@@ -18,10 +18,12 @@ public class ControllerLoginGiudice {
 
     public ControllerLoginGiudice(){}
 
+    //restituisce se il login è stato effettuato oppure no, utile per impedire certe operazioni prima di aver fatto il login
     public boolean getLoginFattoGiudice(){
         return loginFattoGiudice;
     }
 
+    //metodo che controlla se la password corrisponde o se i campi inseriti sono validi
     public void controllaPassword(JFrame frameLoginGiudice, String nome, String password){
         if (nome.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(frameLoginGiudice, "Inserire tutti i campi!");
@@ -39,11 +41,14 @@ public class ControllerLoginGiudice {
             }
         }
     }
+
+    //metodo che controlla se il login è stato fatto oppure no, utile per impedire certe operazioni prima di aver fatto il login
     public void controllaLogin(JFrame frameLogin){
         if (!getLoginFattoGiudice()){
             JOptionPane.showMessageDialog(frameLogin, "Effettua login per poter votare!");
         }
     }
+    //metodo per salvare all'interno di un arraylist i voti inseriti dal giudice
     public void aggiungiVoto(JFrame frameLogin, String teamScelto, String votoDato){
         controllaLogin(frameLogin);
         voti.add(new Voto(teamScelto, votoDato) );
@@ -56,6 +61,7 @@ public class ControllerLoginGiudice {
         return voti;
     }
 
+    //metodo che pubblica il vincitore della gara
     public void Classifica(JFrame frameLoginGiudice){
         int i = 0;
         controllaLogin(frameLoginGiudice);

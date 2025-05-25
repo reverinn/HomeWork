@@ -18,6 +18,7 @@ public class ControllerGiudice {
         giudice.setGiudice(passwordGiudice, nomeGiudice);
     }
 
+    //metodo per controllare che i campi non siano vuoti e che non contengano spazi ed se tutto va bene setta i dati al giudice
     public void controllaConferma(JFrame frameHome, JFrame frameGiudice, String nomeGiudice, String passwordGiudice, ControllerOrganizzatore controllerOrganizzatore) {
         if (!controllerOrganizzatore.getApertura()) {
             JOptionPane.showMessageDialog(frameGiudice, "Le iscrizioni sono chiuse!");
