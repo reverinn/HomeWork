@@ -4,7 +4,6 @@ import model.Piattaforma;
 
 public class Utente {
     protected int idUtente;
-    private Utente utente;
     private String passwordUtente;
     private String nomeUtente;
 
@@ -22,9 +21,5 @@ public class Utente {
         this.passwordUtente = passwordUtente;
         this.nomeUtente = nomeUtente;
     }
-
-    public Utente getUtente(){
-        return utente;
-    }
-
+    
 }

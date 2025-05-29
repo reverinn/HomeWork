@@ -21,7 +21,7 @@ public class UtenteGUI {
     public JFrame frameUtente;
     private ControllerOrganizzatore controllerOrganizzatore;
 
-    public UtenteGUI(JFrame frame, ControllerUtente controller, ControllerOrganizzatore controllerOrganizzatore) {
+    public UtenteGUI(JFrame frame, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore) {
         frameUtente = new JFrame("Utente");
         frameUtente.setContentPane(this.panelUtente);
         frameUtente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,7 +38,7 @@ public class UtenteGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               controller.controllaConferma(frame, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
+               controllerUtente.controllaConferma(frame, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
             }
         });
     }
