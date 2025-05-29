@@ -31,6 +31,7 @@ public class GiudiceGUI {
         frameGiudice.setSize(800,800);
         frameGiudice.setVisible(true);
         giudice = new Giudice();
+        controllerLoginGiudice = new ControllerLoginGiudice(giudice);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,10 +42,9 @@ public class GiudiceGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerGiudice.controllaConferma(frame, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
                 nomeGiudice = nomeGiudiceTextField.getText();
                 passwordGiudice = passwordGiudicePasswordField.getText();
-                controllerLoginGiudice = new ControllerLoginGiudice(giudice, nomeGiudice, passwordGiudice);
+                controllerGiudice.controllaConferma(giudice, frame, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
             }
         });
         seiGiaIscrittoFaiButton.addActionListener(new ActionListener() {

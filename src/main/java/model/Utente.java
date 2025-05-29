@@ -21,5 +21,5 @@ public class Utente {
         this.passwordUtente = passwordUtente;
         this.nomeUtente = nomeUtente;
     }
-    
+
 }

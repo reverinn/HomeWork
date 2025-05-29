@@ -16,6 +16,10 @@ public class ControllerLoginGiudice {
         giudice.setGiudice(password, nome);
     }
 
+    public ControllerLoginGiudice(Giudice giudice){
+        this.giudice = giudice;
+    }
+
     public ControllerLoginGiudice(){}
 
     //restituisce se il login è stato effettuato oppure no, utile per impedire certe operazioni prima di aver fatto il login
@@ -62,11 +66,14 @@ public class ControllerLoginGiudice {
     //metodo che pubblica il vincitore della gara
     public void Classifica(JFrame frameLoginGiudice){
         int i = 0;
-        controllaLogin(frameLoginGiudice);
-        ArrayList<Voto> votiClassifica = voti.stream().filter(voto -> voto.votoAsInt() > 0).collect(Collectors.toCollection(ArrayList::new));
-        votiClassifica.sort((v1, v2) -> v2.votoAsInt() - v1.votoAsInt());
-        votiClassifica.stream().collect(Collectors.toCollection(ArrayList::new));
-        JOptionPane.showMessageDialog(frameLoginGiudice, "Il Team vincitore: \n"+ votiClassifica.get(i));
+        if (!getLoginFattoGiudice()) {
+            controllaLogin(frameLoginGiudice);
+        } else {
+            ArrayList<Voto> votiClassifica = voti.stream().filter(voto -> voto.votoAsInt() > 0).collect(Collectors.toCollection(ArrayList::new));
+            votiClassifica.sort((v1, v2) -> v2.votoAsInt() - v1.votoAsInt());
+            votiClassifica.stream().collect(Collectors.toCollection(ArrayList::new));
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Il Team vincitore: \n"+ votiClassifica.get(i));
+        }
     }
 
 }
