@@ -1,21 +1,24 @@
 package model;
 
-import model.*;
 import java.util.ArrayList;
 
 public class Team {
     //Attributi Classe
-    public int dimensioneMaxTeam;
+    public static final int DIMENSIONE_MAX_TEAM = 4;
     public String nomeSquadra;
 
     public Team () {}
 
     //Aggregato di classe Utente
     ArrayList <Utente> utentiComponenti = new ArrayList<>();
-    public Team(Utente utente, int dimensioneMaxTeam, String nomeSquadra) {
+    public void setTeam(Utente utente, String nomeSquadra) {
         this.nomeSquadra = nomeSquadra;
-        this.dimensioneMaxTeam = dimensioneMaxTeam;
         utentiComponenti.add(utente);
+    }
+
+    //costruttore momentaneo
+    public void setTeam(String nomeSquadra){
+        this.nomeSquadra = nomeSquadra;
     }
 
     //Classe Associativa Documento e Piattaforma

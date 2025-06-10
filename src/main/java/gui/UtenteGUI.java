@@ -1,6 +1,7 @@
 package gui;
 
 import controller.*;
+import model.Utente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -19,26 +20,26 @@ public class UtenteGUI {
     private JLabel etPassword;
     private JButton confermaButton;
     public JFrame frameUtente;
-    private ControllerOrganizzatore controllerOrganizzatore;
+    ControllerUtente controllerUtente;
 
-    public UtenteGUI(JFrame frame, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore) {
+    public UtenteGUI(Utente utente, JFrame frameHome, ControllerOrganizzatore controllerOrganizzatore) {
         frameUtente = new JFrame("Utente");
         frameUtente.setContentPane(this.panelUtente);
         frameUtente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameUtente.setSize(800, 800);
         frameUtente.setVisible(true);
-        this.controllerOrganizzatore = controllerOrganizzatore;
+        controllerUtente = new ControllerUtente(utente);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameUtente.dispose();
-                frame.setVisible(true);
+                frameHome.setVisible(true);
             }
         });
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               controllerUtente.controllaConferma(frame, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
+               controllerUtente.controllaConferma(frameHome, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
             }
         });
     }

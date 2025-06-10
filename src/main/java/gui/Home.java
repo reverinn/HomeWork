@@ -16,12 +16,9 @@ public class Home {
     private JButton organizzatoreButton;
     private JLabel TITOLO;
     private static JFrame frameHome;
-    private ControllerUtente controllerUtente;
     private ControllerTeam controllerTeam;
     private ControllerGiudice controllerGiudice;
     private ControllerOrganizzatore controllerOrganizzatore;
-    private ControllerLoginOrg controllerLoginOrg;
-    private ControllerLoginGiudice controllerLoginGiudice;
 
 
     public static void main(String[] args) {
@@ -39,8 +36,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Utente utente = new Utente();
-                controllerUtente = new ControllerUtente(utente);
-                UtenteGUI utenteGUI = new UtenteGUI(frameHome, controllerUtente, controllerOrganizzatore);
+                UtenteGUI utenteGUI = new UtenteGUI(utente, frameHome, controllerOrganizzatore);
                 utenteGUI.frameUtente.setVisible(true);
                 frameHome.setVisible(false);
 
@@ -50,8 +46,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Team team = new Team();
-                controllerTeam = new ControllerTeam(team);
-                TeamGUI teamGUI = new TeamGUI(frameHome, controllerTeam, controllerOrganizzatore);
+                TeamGUI teamGUI = new TeamGUI(team, frameHome, controllerOrganizzatore);
                 teamGUI.frameTeam.setVisible(true);
                 frameHome.setVisible(false);
             }
@@ -61,8 +56,8 @@ public class Home {
             public void actionPerformed(ActionEvent e) {
                 Giudice giudice = new Giudice();
                 controllerGiudice = new ControllerGiudice(giudice);
-                GiudiceGUI giudiciGUI = new GiudiceGUI(frameHome, controllerGiudice, controllerOrganizzatore);
-                giudiciGUI.frameGiudice.setVisible(true);
+                GiudiceGUI giudiceGUI = new GiudiceGUI(frameHome, controllerGiudice, controllerOrganizzatore);
+                giudiceGUI.frameGiudice.setVisible(true);
                 frameHome.setVisible(false);
             }
         });
