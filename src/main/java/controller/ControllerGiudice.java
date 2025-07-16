@@ -1,26 +1,24 @@
 package controller;
 
 import model.Giudice;
-import model.Voto;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
 public class ControllerGiudice {
-    private Giudice giudice;
-    private ArrayList<Voto> votiClassifica = new ArrayList<>();
 
-    public ControllerGiudice(Giudice giudice) {
-        this.giudice = giudice;
-    }
+    public ControllerGiudice() {}
 
     public void setGiudice(Giudice giudice, String passwordGiudice, String nomeGiudice) {
         giudice.setGiudice(passwordGiudice, nomeGiudice);
     }
 
+    public Giudice getGiudice(Giudice giudice) { return giudice.getGiudice();}
+    public String getNomeGiudice(Giudice giudice) { return giudice.getNomeGiudice(); }
+    public String getPasswordGiudice(Giudice giudice) { return giudice.getPasswordGiudice(); }
+
     //metodo per controllare che i campi non siano vuoti e che non contengano spazi ed se tutto va bene setta i dati al giudice
-    public void controllaConferma(Giudice giudice, JFrame frameHome, JFrame frameGiudice, String nomeGiudice, String passwordGiudice, ControllerOrganizzatore controllerOrganizzatore) {
-        if (!controllerOrganizzatore.getApertura()) {
+    public void controllaConferma(Giudice giudice, JFrame frameGiudice, String nomeGiudice, String passwordGiudice, ControllerOrganizzatore controllerOrganizzatore) {
+        if (!controllerOrganizzatore.getPremuto()) {
             JOptionPane.showMessageDialog(frameGiudice, "Le iscrizioni sono chiuse!");
         } else if (nomeGiudice.toLowerCase().contains(" ") || passwordGiudice.toLowerCase().contains(" ")) {
             JOptionPane.showMessageDialog(frameGiudice, "La password non può contenere spazi iniziali o finali!");

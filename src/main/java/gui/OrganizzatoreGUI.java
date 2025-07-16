@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import controller.ControllerLoginOrg;
 import controller.ControllerOrganizzatore;
+import controller.ControllerUtente;
 import model.Organizzatore;
 
 public class OrganizzatoreGUI {
@@ -17,32 +18,27 @@ public class OrganizzatoreGUI {
     private JButton confermaButton;
     private JButton loginButton;
     public JFrame frameOrganizzatore;
-    private boolean premuto = false;
     private LoginOrganizzatoreGUI loginOrganizzatore;
     private ControllerLoginOrg controllerLoginOrg;
-    private ControllerOrganizzatore controllerOrganizzatore;
-    private Organizzatore organizzatore;
 
-    public OrganizzatoreGUI(JFrame frame, ControllerOrganizzatore controllerOrganizzatore, Organizzatore organizzatore) {
+    public OrganizzatoreGUI(JFrame frameHome, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore, Organizzatore organizzatore) {
         frameOrganizzatore = new JFrame("Organizzatore");
         frameOrganizzatore.setContentPane(this.panelOrganizzatore);
         frameOrganizzatore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameOrganizzatore.setSize(800,800);
         frameOrganizzatore.setVisible(true);
-        this.controllerOrganizzatore = controllerOrganizzatore;
-        this.organizzatore = organizzatore;
         controllerLoginOrg = new ControllerLoginOrg(organizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameOrganizzatore.dispose();
-                frame.setVisible(true);
+                frameHome.setVisible(true);
             }
         });
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerOrganizzatore.controllaConferma(frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText(), premuto, controllerOrganizzatore);
+                controllerOrganizzatore.controllaConferma(frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
             }
         });
         loginButton.addActionListener(new ActionListener() {
@@ -51,9 +47,9 @@ public class OrganizzatoreGUI {
                 String nome = nomeOrganizzatoreTextField.getText();
                 String password = passwordOrganizzatoreField.getText();
 
-                organizzatore.setOrganizzatore(nome, password);
+                controllerOrganizzatore.setOrganizzatore(nome, password);
                 controllerLoginOrg = new ControllerLoginOrg(organizzatore, nome, password);
-                loginOrganizzatore = new LoginOrganizzatoreGUI(frameOrganizzatore, controllerOrganizzatore, controllerLoginOrg, organizzatore);
+                loginOrganizzatore = new LoginOrganizzatoreGUI(frameOrganizzatore, controllerUtente, controllerOrganizzatore, controllerLoginOrg, organizzatore);
             }
         });
     }

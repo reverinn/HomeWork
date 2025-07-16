@@ -4,11 +4,17 @@ import model.Piattaforma;
 
 public class Utente {
     protected int idUtente;
-    private String passwordUtente;
-    private String nomeUtente;
+    protected String passwordUtente;
+    protected String nomeUtente;
 
-    //costruttore per classi figlie
-    public Utente() {}
+    //costruttore per arraylist
+    public Utente(String nome, String password) {
+        this.nomeUtente = nome;
+        this.passwordUtente = password;
+    }
+
+    //costruttore per classe figlia Giudice
+    public Utente(){}
 
     //Associazione con Piattaforma
     Piattaforma piattaforma;
@@ -17,9 +23,8 @@ public class Utente {
         this.piattaforma = piattaforma;
     }
 
-    public void setUtente(String passwordUtente, String nomeUtente ) {
-        this.passwordUtente = passwordUtente;
-        this.nomeUtente = nomeUtente;
+    public String toString(){
+        return "nome: " + nomeUtente + " password: " + passwordUtente;
     }
 
 }

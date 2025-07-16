@@ -5,54 +5,28 @@ import model.*;
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class Organizzatore extends Utente {
+public class Organizzatore {
     private String nome;
     private String password;
-    public ArrayList <Giudice> giudicescelto = new ArrayList<>();
-    private Organizzatore organizzatore;
     private boolean apertura;
 
-    //Aggiungo Giudici già esistenti
-    public Organizzatore(Giudice a) {
-        giudicescelto.add(a);
-        a.scelto = this;
-    }
-
-    //Aggiungo nuovo Giudice
-    public Organizzatore(){
-        giudicescelto.add(new Giudice(this));
-    }
+    public void Organizzatore(){}
 
     public void setOrganizzatore(String nome, String password){
         this.nome = nome;
         this.password = password;
     }
 
-    public void setApertura(boolean apertura){
+    public void setPremuto(boolean apertura){
         this.apertura = apertura;
     }
-
-    public boolean getApertura(){
+    public boolean getPremuto(){
         return apertura;
-    }
-
-    public Organizzatore getOrganizzatore(){
-        return organizzatore;
-    }
-
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getNomeOrganizzatore(){
         return nome;
     }
-
     public String getPasswordOrganizzatore(){
         return password;
     }

@@ -20,17 +20,15 @@ public class GiudiceGUI {
     public JFrame frameGiudice;
     private LoginGiudiceGUI loginGiudice;
     private ControllerLoginGiudice controllerLoginGiudice;
-    private Giudice giudice;
     private String nomeGiudice;
     private String passwordGiudice;
 
-    public GiudiceGUI(JFrame frame, ControllerGiudice controllerGiudice, ControllerOrganizzatore controllerOrganizzatore) {
+    public GiudiceGUI(JFrame frame, ControllerGiudice controllerGiudice, ControllerOrganizzatore controllerOrganizzatore, Giudice giudice) {
         frameGiudice = new JFrame("Giudici");
         frameGiudice.setContentPane(this.panelGiudice);
         frameGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameGiudice.setSize(800,800);
         frameGiudice.setVisible(true);
-        giudice = new Giudice();
         controllerLoginGiudice = new ControllerLoginGiudice(giudice);
         closeButton.addActionListener(new ActionListener() {
             @Override
@@ -44,7 +42,7 @@ public class GiudiceGUI {
             public void actionPerformed(ActionEvent e) {
                 nomeGiudice = nomeGiudiceTextField.getText();
                 passwordGiudice = passwordGiudicePasswordField.getText();
-                controllerGiudice.controllaConferma(giudice, frame, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
+                controllerGiudice.controllaConferma(giudice, frameGiudice, nomeGiudiceTextField.getText(), passwordGiudicePasswordField.getText(), controllerOrganizzatore);
             }
         });
         seiGiaIscrittoFaiButton.addActionListener(new ActionListener() {

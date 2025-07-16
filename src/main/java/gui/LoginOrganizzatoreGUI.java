@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import controller.ControllerLoginOrg;
 import controller.ControllerOrganizzatore;
+import controller.ControllerUtente;
 import model.Organizzatore;
 
 import java.awt.event.ActionEvent;
@@ -19,8 +20,9 @@ public class LoginOrganizzatoreGUI {
     private JPanel panelLoginOrg;
     private JButton apriIscrizioniButton;
     private JButton chiudiIscrizioniButton;
+    private JButton visualizzaUtentiButton;
     private JFrame frameLoginOrg;
-    public LoginOrganizzatoreGUI(JFrame frameOrganizzatore, ControllerOrganizzatore controllerOrganizzatore, ControllerLoginOrg controllerLoginOrg, Organizzatore organizzatore){
+    public LoginOrganizzatoreGUI(JFrame frameOrganizzatore, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore, ControllerLoginOrg controllerLoginOrg, Organizzatore organizzatore){
         frameLoginOrg=new JFrame("Login Organizzatore");
         frameLoginOrg.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLoginOrg.setContentPane(this.panelLoginOrg);
@@ -48,7 +50,7 @@ public class LoginOrganizzatoreGUI {
         chiudiIscrizioniButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerOrganizzatore.setApertura(false);
+                controllerOrganizzatore.setPremuto(false);
                 controllerLoginOrg.verificaAperturaIscrizioni(frameLoginOrg, controllerOrganizzatore);
             }
         });

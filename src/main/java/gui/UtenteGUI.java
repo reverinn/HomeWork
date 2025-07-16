@@ -22,18 +22,18 @@ public class UtenteGUI {
     public JFrame frameUtente;
     ControllerUtente controllerUtente;
 
-    public UtenteGUI(Utente utente, JFrame frameHome, ControllerOrganizzatore controllerOrganizzatore) {
+    public UtenteGUI(ControllerUtente controllerUtente, JFrame frameHome, ControllerOrganizzatore controllerOrganizzatore) {
         frameUtente = new JFrame("Utente");
         frameUtente.setContentPane(this.panelUtente);
         frameUtente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameUtente.setSize(800, 800);
         frameUtente.setVisible(true);
-        controllerUtente = new ControllerUtente(utente);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameUtente.dispose();
                 frameHome.setVisible(true);
+                controllerUtente.stampaArrayUtente();
             }
         });
         confermaButton.addActionListener(new ActionListener() {

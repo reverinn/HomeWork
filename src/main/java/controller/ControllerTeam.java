@@ -12,9 +12,13 @@ public class ControllerTeam {
     public void setScelta(String scelta) { this.scelta = scelta; }
     public String getScelta() { return scelta; }
 
+    public void setTeam(String selTeam) {
+        team.setTeam(selTeam);
+    }
+
     //permette di confermare la scelta se niente è andato storto
     public void controllaOK(JFrame frameHome, JFrame frameTeam, String selTeam, ControllerOrganizzatore controllerOrganizzatore){
-        if (!controllerOrganizzatore.getApertura()) {
+        if (!controllerOrganizzatore.getPremuto()) {
             JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");
         } else {
             JOptionPane.showMessageDialog(frameTeam, "Scelta avvenuta con successo!");
@@ -26,13 +30,10 @@ public class ControllerTeam {
         }
     }
 
-    public void setTeam(String selTeam) {
-        team.setTeam(selTeam);
-    }
 
     //permette di inviare il documento al team se le iscrizioni sono state aperte dall'organizzatore
     public void controllaCaricamento(JFrame frameTeam, ControllerOrganizzatore controllerOrganizzatore){
-        if (!controllerOrganizzatore.getApertura()) {
+        if (!controllerOrganizzatore.getPremuto()) {
             JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");
         } else {
             JOptionPane.showMessageDialog(frameTeam, "Documento inviato con successo!");

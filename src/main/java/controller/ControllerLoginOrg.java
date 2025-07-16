@@ -26,7 +26,7 @@ public class ControllerLoginOrg {
         if(nome.equals(organizzatore.getNomeOrganizzatore()) && password.equals(organizzatore.getPasswordOrganizzatore())) {
             JOptionPane.showMessageDialog(frameLogin, "Login avvenuto con successo!\nle vostre credenziali: " + organizzatore.getNomeOrganizzatore() + " " + organizzatore.getPasswordOrganizzatore() + "\ne\' possibile aprire le iscrizioni ora!");
             loginFatto = true;
-            controllerOrganizzatore.setApertura(true);
+            controllerOrganizzatore.setPremuto(true);
         }
         else{
             JOptionPane.showMessageDialog(frameLogin, "Credenziali non corrette!");
@@ -45,7 +45,7 @@ public class ControllerLoginOrg {
 
     //metodo che vieta all'roganizzatore di aprire le iscrizioni, solo se non ha effettuato il login correttamente
     public void verificaAperturaIscrizioni(JFrame frameLogin, ControllerOrganizzatore controllerOrganizzatore){
-        if (controllerOrganizzatore.getApertura()){
+        if (controllerOrganizzatore.getPremuto()){
             avvioIscrizioni(frameLogin, controllerOrganizzatore);
         }
         else{

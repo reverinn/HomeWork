@@ -19,7 +19,7 @@ public class Home {
     private ControllerTeam controllerTeam;
     private ControllerGiudice controllerGiudice;
     private ControllerOrganizzatore controllerOrganizzatore;
-
+    private ControllerUtente controllerUtente;
 
     public static void main(String[] args) {
         frameHome = new JFrame("Home");
@@ -32,14 +32,13 @@ public class Home {
     public Home() {
         Organizzatore organizzatore = new Organizzatore();
         controllerOrganizzatore = new ControllerOrganizzatore(organizzatore);
+        controllerUtente = new ControllerUtente();
         utenteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Utente utente = new Utente();
-                UtenteGUI utenteGUI = new UtenteGUI(utente, frameHome, controllerOrganizzatore);
+                UtenteGUI utenteGUI = new UtenteGUI(controllerUtente, frameHome, controllerOrganizzatore);
                 utenteGUI.frameUtente.setVisible(true);
                 frameHome.setVisible(false);
-
             }
         });
         teamButton.addActionListener(new ActionListener() {
@@ -55,8 +54,8 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Giudice giudice = new Giudice();
-                controllerGiudice = new ControllerGiudice(giudice);
-                GiudiceGUI giudiceGUI = new GiudiceGUI(frameHome, controllerGiudice, controllerOrganizzatore);
+                controllerGiudice = new ControllerGiudice();
+                GiudiceGUI giudiceGUI = new GiudiceGUI(frameHome, controllerGiudice, controllerOrganizzatore, giudice);
                 giudiceGUI.frameGiudice.setVisible(true);
                 frameHome.setVisible(false);
             }
@@ -64,12 +63,11 @@ public class Home {
         organizzatoreButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerOrganizzatore, organizzatore);
+                OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerUtente, controllerOrganizzatore, organizzatore);
                 organizzatoreGUI.frameOrganizzatore.setVisible(true);
                 frameHome.setVisible(false);
             }
         });
     }
-
 
 }
