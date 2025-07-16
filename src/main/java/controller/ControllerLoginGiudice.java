@@ -1,6 +1,5 @@
 package controller;
 
-import model.Giudice;
 import model.Voto;
 import javax.swing.*;
 import java.util.ArrayList;
@@ -8,17 +7,7 @@ import java.util.stream.Collectors;
 
 public class ControllerLoginGiudice {
     private boolean loginFattoGiudice = false;
-    private Giudice giudice;
     private ArrayList<Voto> voti = new ArrayList<>();
-
-    public ControllerLoginGiudice(Giudice giudice, String nome, String password){
-        this.giudice = giudice;
-        giudice.setGiudice(password, nome);
-    }
-
-    public ControllerLoginGiudice(Giudice giudice){
-        this.giudice = giudice;
-    }
 
     public ControllerLoginGiudice(){}
 
@@ -28,6 +17,7 @@ public class ControllerLoginGiudice {
     }
 
     //metodo che controlla se la password corrisponde o se i campi inseriti sono validi
+    //DA TORNARCI DOPO! NON TOCCARE!
     public void controllaPassword(JFrame frameLoginGiudice, String nome, String password){
         if (nome.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(frameLoginGiudice, "Inserire tutti i campi!");
@@ -35,14 +25,13 @@ public class ControllerLoginGiudice {
         else if (nome.contains(" ") || password.contains(" ") ) {
             JOptionPane.showMessageDialog(frameLoginGiudice, "I campi non possono contenere spazi!");
         }
-        else if (nome.equals(giudice.getNomeGiudice()) && password.equals(giudice.getPasswordGiudice())) {
-                JOptionPane.showMessageDialog(frameLoginGiudice, "Login avvenuto con successo!\nle vostre credenziali: " + giudice.getNomeGiudice() + " " + giudice.getPasswordGiudice() + "\ne\' possibile ora dare i voti!");
-                loginFattoGiudice = true;
-            }
-            else{
-                JOptionPane.showMessageDialog(frameLoginGiudice, "Credenziali non corrette!");
-            }
+        else{
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Credenziali non corrette!");
+        }
+
     }
+
+
 
     //metodo che controlla se il login è stato fatto oppure no, utile per impedire certe operazioni prima di aver fatto il login
     public void controllaLogin(JFrame frameLogin){

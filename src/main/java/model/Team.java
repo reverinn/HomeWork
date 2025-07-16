@@ -21,12 +21,5 @@ public class Team {
         this.nomeSquadra = nomeSquadra;
     }
 
-    //Classe Associativa Documento e Piattaforma
-    public ArrayList <Documento> documentoCaricato = new ArrayList<>(); //piu versioni di un documento caricabili
-    Piattaforma piattaforma;
-    public Team(Documento d, Piattaforma piattaforma) {
-        this.piattaforma = piattaforma;
-        documentoCaricato.add(d);
-    }
 
 }

@@ -17,9 +17,9 @@ public class Home {
     private JLabel TITOLO;
     private static JFrame frameHome;
     private ControllerTeam controllerTeam;
-    private ControllerGiudice controllerGiudice;
     private ControllerOrganizzatore controllerOrganizzatore;
     private ControllerUtente controllerUtente;
+    private ControllerLoginGiudice controllerLoginGiudice;
 
     public static void main(String[] args) {
         frameHome = new JFrame("Home");
@@ -53,10 +53,8 @@ public class Home {
         giudiciButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Giudice giudice = new Giudice();
-                controllerGiudice = new ControllerGiudice();
-                GiudiceGUI giudiceGUI = new GiudiceGUI(frameHome, controllerGiudice, controllerOrganizzatore, giudice);
-                giudiceGUI.frameGiudice.setVisible(true);
+                controllerLoginGiudice = new ControllerLoginGiudice();
+                LoginGiudiceGUI loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerLoginGiudice, controllerOrganizzatore);
                 frameHome.setVisible(false);
             }
         });

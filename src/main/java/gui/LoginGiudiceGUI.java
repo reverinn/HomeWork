@@ -1,7 +1,7 @@
 package gui;
 
 import javax.swing.*;
-import controller.ControllerGiudice;
+
 import controller.ControllerLoginGiudice;
 import controller.ControllerOrganizzatore;
 
@@ -20,13 +20,13 @@ public class LoginGiudiceGUI {
     private JButton OKButton;
     private JButton pubblicaClassificheButton;
     private JFrame frameLoginGiudice;
-    public LoginGiudiceGUI(JFrame frameGiudice, ControllerGiudice controllerGiudice, ControllerLoginGiudice controllerLoginGiudice, ControllerOrganizzatore controllerOrganizzatore) {
+    public LoginGiudiceGUI(JFrame frameHome, ControllerLoginGiudice controllerLoginGiudice, ControllerOrganizzatore controllerOrganizzatore) {
         frameLoginGiudice=new JFrame("Login Giudice");
         frameLoginGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLoginGiudice.setSize(800,800);
         frameLoginGiudice.setContentPane(this.loginGiudiceLabel);
         frameLoginGiudice.setVisible(true);
-        frameGiudice.setVisible(false);
+        frameHome.setVisible(false);
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -36,7 +36,7 @@ public class LoginGiudiceGUI {
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frameGiudice.setVisible(true);
+                frameHome.setVisible(true);
                 frameLoginGiudice.dispose();
             }
         });

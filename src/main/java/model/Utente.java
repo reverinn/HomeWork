@@ -1,7 +1,5 @@
 package model;
 
-import model.Piattaforma;
-
 public class Utente {
     protected int idUtente;
     protected String passwordUtente;
@@ -15,13 +13,6 @@ public class Utente {
 
     //costruttore per classe figlia Giudice
     public Utente(){}
-
-    //Associazione con Piattaforma
-    Piattaforma piattaforma;
-    public Utente(int idUtente, Piattaforma piattaforma) {
-        this.idUtente = idUtente;
-        this.piattaforma = piattaforma;
-    }
 
     public String toString(){
         return "nome: " + nomeUtente + " password: " + passwordUtente;
