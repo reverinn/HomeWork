@@ -33,6 +33,7 @@ public class Home {
         Organizzatore organizzatore = new Organizzatore();
         controllerOrganizzatore = new ControllerOrganizzatore(organizzatore);
         controllerUtente = new ControllerUtente();
+        controllerTeam = new ControllerTeam();
         utenteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -44,8 +45,7 @@ public class Home {
         teamButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Team team = new Team();
-                TeamGUI teamGUI = new TeamGUI(team, frameHome, controllerOrganizzatore);
+                TeamGUI teamGUI = new TeamGUI(frameHome, controllerOrganizzatore, controllerTeam);
                 teamGUI.frameTeam.setVisible(true);
                 frameHome.setVisible(false);
             }
@@ -54,7 +54,7 @@ public class Home {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controllerLoginGiudice = new ControllerLoginGiudice();
-                LoginGiudiceGUI loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerLoginGiudice, controllerOrganizzatore);
+                LoginGiudiceGUI loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerLoginGiudice, controllerTeam);
                 frameHome.setVisible(false);
             }
         });

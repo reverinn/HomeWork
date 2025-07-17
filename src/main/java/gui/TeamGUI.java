@@ -3,9 +3,8 @@ package gui;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import model.Team;
 import controller.ControllerTeam;
-
+import model.Team;
 import controller.ControllerOrganizzatore;
 
 public class TeamGUI {
@@ -16,13 +15,12 @@ public class TeamGUI {
     private JButton OKButton;
     private JButton CARICADOCUMENTOButton;
     public JFrame frameTeam;
-    public TeamGUI(Team team, JFrame frame, ControllerOrganizzatore controllerOrganizzatore) {
+    public TeamGUI(JFrame frame, ControllerOrganizzatore controllerOrganizzatore, ControllerTeam controllerTeam) {
         frameTeam = new JFrame("Team");
         frameTeam.setContentPane(this.teamPanel);
         frameTeam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameTeam.setSize(800,800);
         frameTeam.setVisible(true);
-        ControllerTeam controllerTeam = new ControllerTeam(team);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -1,19 +1,21 @@
 package controller;
 
 import model.Team;
-
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class ControllerTeam {
-    private Team team;
+    private ArrayList<Team> arrayTeam = new ArrayList<>();
     private String scelta;
-    public ControllerTeam(Team team) { this.team = team; }
+    public ControllerTeam() {  }
 
     public void setScelta(String scelta) { this.scelta = scelta; }
     public String getScelta() { return scelta; }
 
-    public void setTeam(String selTeam) {
-        team.setTeam(selTeam);
+
+    public void setTeam(String nomeTeam, int voto) {
+        Team team = new Team(nomeTeam, voto);
+        arrayTeam.add(team);
     }
 
     //permette di confermare la scelta se niente è andato storto
@@ -23,7 +25,6 @@ public class ControllerTeam {
         } else {
             JOptionPane.showMessageDialog(frameTeam, "Scelta avvenuta con successo!");
             setScelta(selTeam);
-            setTeam(getScelta());
             frameTeam.setVisible(false);
             frameHome.setVisible(true);
             JOptionPane.showMessageDialog(frameTeam, "Selezionato: " + getScelta());
@@ -38,6 +39,12 @@ public class ControllerTeam {
         } else {
             JOptionPane.showMessageDialog(frameTeam, "Documento inviato con successo!");
             frameTeam.setVisible(false);
+        }
+    }
+
+    public void stampaTeam(JFrame frameGiudice) {
+        for (Team team : arrayTeam) {
+            JOptionPane.showMessageDialog(frameGiudice, "Nome team: " + team.getNomeSquadra() + " - Voto: " + team.getVoto());
         }
     }
 

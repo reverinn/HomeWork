@@ -1,7 +1,6 @@
 package gui;
 
 import controller.*;
-import model.Utente;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -39,7 +38,7 @@ public class UtenteGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               controllerUtente.controllaConferma(frameHome, frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
+               controllerUtente.controllaConferma(frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
             }
         });
     }
