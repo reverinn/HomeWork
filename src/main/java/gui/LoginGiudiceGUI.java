@@ -21,14 +21,13 @@ public class LoginGiudiceGUI {
     private JTextField votoTextField;
     private JButton registratiButton;
     private JFrame frameLoginGiudice;
-    public LoginGiudiceGUI(JFrame frameHome, ControllerTeam controllerTeam) {
+    public LoginGiudiceGUI(JFrame frameHome, ControllerTeam controllerTeam, ControllerLoginGiudice controllerLoginGiudice) {
         frameLoginGiudice=new JFrame("Login Giudice");
         frameLoginGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLoginGiudice.setSize(800,800);
         frameLoginGiudice.setContentPane(this.loginGiudiceLabel);
         frameLoginGiudice.setVisible(true);
         frameHome.setVisible(false);
-        ControllerLoginGiudice controllerLoginGiudice = new ControllerLoginGiudice(controllerTeam);
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

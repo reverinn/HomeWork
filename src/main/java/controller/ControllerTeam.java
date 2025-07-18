@@ -78,9 +78,23 @@ public class ControllerTeam {
 
     public void stampaClassificaTeam(JFrame frameGiudice) {
       for (Team team : arrayTeam) {
-          System.out.println(team.getNomeSquadra() + ": " + team.getVoto());
+          JOptionPane.showMessageDialog(frameGiudice, team.toString());
       }
     }
 
-
+    public ArrayList<Utente> getArrayTeamRosso() {
+        return arrayTeamRosso;
+    }
+    public ArrayList<Utente> getArrayTeamVerde() {
+        return arrayTeamVerde;
+    }
+    public ArrayList<Utente> getArrayTeamBlu() {
+        return arrayTeamBlu;
+    }
+    public ArrayList<Utente> getArrayTeamGiallo() {
+        return arrayTeamGiallo;
+    }
+    public ArrayList<Team> getArrayTeam() {
+        return arrayTeam;
+    }
 }

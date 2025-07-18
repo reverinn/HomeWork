@@ -4,12 +4,14 @@ import model.Organizzatore;
 
 import javax.swing.*;
 
-public class ControllerLoginOrg extends ControllerTeam {
+public class ControllerLoginOrg {
+    private ControllerTeam controllerTeam;
     private Organizzatore organizzatore;
     private boolean loginFatto = false;
 
-    public ControllerLoginOrg(Organizzatore organizzatore) {
+    public ControllerLoginOrg(Organizzatore organizzatore, ControllerTeam controllerTeam) {
         this.organizzatore = organizzatore;
+        this.controllerTeam = controllerTeam;
     }
 
     public boolean getLoginFatto(){
@@ -45,11 +47,11 @@ public class ControllerLoginOrg extends ControllerTeam {
         if (getLoginFatto()){
             JOptionPane.showMessageDialog(frameLogin, "Iscrizioni chiuse!");
             controllerOrganizzatore.setPremuto(false);
-            creaTeam("Team Rosso", 0, arrayTeamRosso);
-            creaTeam("Team Verde", 0, arrayTeamVerde);
-            creaTeam("Team Blu", 0, arrayTeamBlu);
-            creaTeam("Team Giallo", 0, arrayTeamGiallo);
-            stampaClassificaTeam(frameLogin);
+            controllerTeam.creaTeam("Team Rosso", 0,  controllerTeam.getArrayTeamRosso());
+            controllerTeam.creaTeam("Team Verde", 0,  controllerTeam.getArrayTeamVerde());
+            controllerTeam.creaTeam("Team Blu", 0,  controllerTeam.getArrayTeamBlu());
+            controllerTeam.creaTeam("Team Giallo", 0,  controllerTeam.getArrayTeamGiallo());
+            controllerTeam.stampaClassificaTeam(frameLogin);
         }
         else{
             JOptionPane.showMessageDialog(frameLogin, "fai prima login!");

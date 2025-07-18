@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import controller.ControllerLoginOrg;
 import controller.ControllerOrganizzatore;
 import controller.ControllerUtente;
+import controller.ControllerTeam;
 import model.Organizzatore;
 
 public class OrganizzatoreGUI {
@@ -21,13 +22,13 @@ public class OrganizzatoreGUI {
     private LoginOrganizzatoreGUI loginOrganizzatore;
     private ControllerLoginOrg controllerLoginOrg;
 
-    public OrganizzatoreGUI(JFrame frameHome, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore, Organizzatore organizzatore) {
+    public OrganizzatoreGUI(JFrame frameHome, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore, Organizzatore organizzatore, ControllerTeam controllerTeam) {
         frameOrganizzatore = new JFrame("Organizzatore");
         frameOrganizzatore.setContentPane(this.panelOrganizzatore);
         frameOrganizzatore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameOrganizzatore.setSize(800,800);
         frameOrganizzatore.setVisible(true);
-        controllerLoginOrg = new ControllerLoginOrg(organizzatore);
+        controllerLoginOrg = new ControllerLoginOrg(organizzatore, controllerTeam);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

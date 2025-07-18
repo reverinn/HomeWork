@@ -35,6 +35,7 @@ public class Home {
         controllerOrganizzatore = new ControllerOrganizzatore(organizzatore);
         controllerUtente = new ControllerUtente();
         controllerTeam = new ControllerTeam();
+        controllerLoginGiudice = new ControllerLoginGiudice(controllerTeam);
         utenteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,14 +55,14 @@ public class Home {
         giudiciButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerTeam);
+                loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerTeam, controllerLoginGiudice);
                 frameHome.setVisible(false);
             }
         });
         organizzatoreButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerUtente, controllerOrganizzatore, organizzatore);
+                OrganizzatoreGUI organizzatoreGUI = new OrganizzatoreGUI(frameHome, controllerUtente, controllerOrganizzatore, organizzatore, controllerTeam);
                 organizzatoreGUI.frameOrganizzatore.setVisible(true);
                 frameHome.setVisible(false);
             }
