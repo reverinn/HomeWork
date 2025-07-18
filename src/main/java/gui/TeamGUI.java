@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import controller.ControllerTeam;
-import model.Team;
 import controller.ControllerOrganizzatore;
 
 public class TeamGUI {
@@ -12,7 +11,7 @@ public class TeamGUI {
     private JButton closeButton;
     private JComboBox teamBox;
     private JLabel etselTeam;
-    private JButton OKButton;
+    private JButton okButton;
     private JButton CARICADOCUMENTOButton;
     public JFrame frameTeam;
     public TeamGUI(JFrame frame, ControllerOrganizzatore controllerOrganizzatore, ControllerTeam controllerTeam) {
@@ -28,7 +27,7 @@ public class TeamGUI {
                 frame.setVisible(true);
             }
         });
-        OKButton.addActionListener(new ActionListener() {
+        okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controllerTeam.controllaOK(frame,frameTeam, teamBox.getSelectedItem().toString(), controllerOrganizzatore);

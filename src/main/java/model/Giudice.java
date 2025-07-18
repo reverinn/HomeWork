@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 public class Giudice extends Utente {
-    private Giudice giudice;
     private String nome;
     private String password;
 
@@ -42,8 +41,5 @@ public class Giudice extends Utente {
         return password;
     }
 
-    public Giudice getGiudice(){
-        return giudice;
-    }
 
 }

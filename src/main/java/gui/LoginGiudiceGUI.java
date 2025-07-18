@@ -3,7 +3,6 @@ package gui;
 import javax.swing.*;
 
 import controller.ControllerLoginGiudice;
-import controller.ControllerTeam;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,16 +11,16 @@ public class LoginGiudiceGUI {
     private JTextField loginGiudiceTextField;
     private JButton confermaButton;
     private JButton closeButton;
-    private JLabel LoginGiudice;
+    private JLabel loginGIudice;
     private JPanel loginGiudiceLabel;
     private JPasswordField loginGiudicePasswordField;
     private JComboBox teamDaVotareBox;
-    private JButton OKButton;
+    private JButton okButton;
     private JButton pubblicaClassificheButton;
     private JTextField votoTextField;
     private JButton registratiButton;
     private JFrame frameLoginGiudice;
-    public LoginGiudiceGUI(JFrame frameHome, ControllerTeam controllerTeam, ControllerLoginGiudice controllerLoginGiudice) {
+    public LoginGiudiceGUI(JFrame frameHome, ControllerLoginGiudice controllerLoginGiudice) {
         frameLoginGiudice=new JFrame("Login Giudice");
         frameLoginGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLoginGiudice.setSize(800,800);
@@ -41,7 +40,7 @@ public class LoginGiudiceGUI {
                 frameLoginGiudice.dispose();
             }
         });
-        OKButton.addActionListener(new ActionListener() {
+        okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int valore = Integer.parseInt(votoTextField.getText());

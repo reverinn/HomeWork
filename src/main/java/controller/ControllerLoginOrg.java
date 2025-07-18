@@ -6,11 +6,9 @@ import javax.swing.*;
 
 public class ControllerLoginOrg {
     private ControllerTeam controllerTeam;
-    private Organizzatore organizzatore;
     private boolean loginFatto = false;
 
-    public ControllerLoginOrg(Organizzatore organizzatore, ControllerTeam controllerTeam) {
-        this.organizzatore = organizzatore;
+    public ControllerLoginOrg(ControllerTeam controllerTeam) {
         this.controllerTeam = controllerTeam;
     }
 

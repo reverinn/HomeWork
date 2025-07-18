@@ -28,7 +28,7 @@ public class OrganizzatoreGUI {
         frameOrganizzatore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameOrganizzatore.setSize(800,800);
         frameOrganizzatore.setVisible(true);
-        controllerLoginOrg = new ControllerLoginOrg(organizzatore, controllerTeam);
+        controllerLoginOrg = new ControllerLoginOrg(controllerTeam);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -1,11 +1,9 @@
 package model;
 
 import java.util.ArrayList;
-import model.*;
 
 public class Voto {
     public String valoreVoto;
-    private int idGiudice; //riconoscitivo del singolo giudice che da il voto
     public String nomeSquadra;
 
 

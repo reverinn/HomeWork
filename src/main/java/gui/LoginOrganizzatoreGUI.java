@@ -18,7 +18,6 @@ public class LoginOrganizzatoreGUI {
     private JPanel panelLoginOrg;
     private JButton apriIscrizioniButton;
     private JButton chiudiIscrizioniButton;
-    private JButton visualizzaUtentiButton;
     private JFrame frameLoginOrg;
     public LoginOrganizzatoreGUI(JFrame frameOrganizzatore, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore, ControllerLoginOrg controllerLoginOrg, Organizzatore organizzatore){
         frameLoginOrg=new JFrame("Login Organizzatore");

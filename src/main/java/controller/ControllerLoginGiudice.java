@@ -70,6 +70,8 @@ public class ControllerLoginGiudice {
                 case "Team Giallo":
                     controllerTeam.setVoto(voto, "Team Giallo");
                     break;
+                default:
+                    break;
             }
         }
         else{
