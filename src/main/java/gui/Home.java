@@ -53,7 +53,7 @@ public class Home {
         giudiciButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerLoginGiudice = new ControllerLoginGiudice();
+                controllerLoginGiudice = new ControllerLoginGiudice(controllerUtente);
                 LoginGiudiceGUI loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerLoginGiudice, controllerTeam);
                 frameHome.setVisible(false);
             }

@@ -1,12 +1,18 @@
 package controller;
 
+import model.Utente;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
-public class ControllerLoginGiudice {
+public class ControllerLoginGiudice  {
     private boolean loginFattoGiudice = false;
-
+    private ControllerUtente controllerUtenteLoginGiudice;
     public ControllerLoginGiudice(){}
+
+    public ControllerLoginGiudice(ControllerUtente controllerUtenteLoginGiudice){
+        this.controllerUtenteLoginGiudice = controllerUtenteLoginGiudice;
+    }
 
     //restituisce se il login è stato effettuato oppure no, utile per impedire certe operazioni prima di aver fatto il login
     public boolean getLoginFattoGiudice(){
@@ -28,11 +34,9 @@ public class ControllerLoginGiudice {
 
     }
 
-
     //metodo per salvare all'interno di un arraylist i voti inseriti dal giudice
     public void assegnaVoto(JFrame frameLogin, ControllerTeam controllerTeam, String teamSelezionato, int voto){
         if (getLoginFattoGiudice()) {
-            controllerTeam.setTeam(teamSelezionato, voto);
         }
         else{
             JOptionPane.showMessageDialog(frameLogin, "Effettua login per poter votare!");
@@ -42,7 +46,7 @@ public class ControllerLoginGiudice {
     //metodo che pubblica il vincitore della gara
     public void stampaClassifica (JFrame frameLogin, ControllerTeam controllerTeam) {
         if (getLoginFattoGiudice()) {
-            controllerTeam.stampaTeam(frameLogin);
+            controllerTeam.stampaClassificaTeam(frameLogin);
         }
         else {
             JOptionPane.showMessageDialog(frameLogin, "Effettua login per poter votare!");

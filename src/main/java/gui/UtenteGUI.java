@@ -18,8 +18,9 @@ public class UtenteGUI {
     private JLabel etNomeUtente;
     private JLabel etPassword;
     private JButton confermaButton;
+    private JComboBox comboBox1;
+    private JComboBox scegliTeamBox;
     public JFrame frameUtente;
-    ControllerUtente controllerUtente;
 
     public UtenteGUI(ControllerUtente controllerUtente, JFrame frameHome, ControllerOrganizzatore controllerOrganizzatore) {
         frameUtente = new JFrame("Utente");
@@ -32,13 +33,12 @@ public class UtenteGUI {
             public void actionPerformed(ActionEvent e) {
                 frameUtente.dispose();
                 frameHome.setVisible(true);
-                controllerUtente.stampaArrayUtente();
             }
         });
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               controllerUtente.controllaConferma(frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore);
+               controllerUtente.controllaConferma(frameUtente, nomeUtenteTextField.getText(), passwordPasswordField.getText(), controllerOrganizzatore, scegliTeamBox.getSelectedItem().toString());
             }
         });
     }

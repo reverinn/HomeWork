@@ -7,10 +7,12 @@ public class Team {
     public static final int DIMENSIONE_MAX_TEAM = 4;
     public String nomeSquadra;
     private int voto;
+    private ArrayList<Utente> utenteTeam;
 
-    public Team (String nomeSquadra, int voto) {
+    public Team (String nomeSquadra, int voto, ArrayList<Utente> utente) {
         this.nomeSquadra = nomeSquadra;
         this.voto = voto;
+        this.utenteTeam = utente;
     }
 
     public String getNomeSquadra() { return nomeSquadra; }

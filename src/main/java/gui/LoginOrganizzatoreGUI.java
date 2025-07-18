@@ -11,8 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginOrganizzatoreGUI {
-    private String nome;
-    private String password;
     private JTextField loginTextField;
     private JPasswordField loginPasswordField;
     private JButton confermaButton;
@@ -31,7 +29,7 @@ public class LoginOrganizzatoreGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerLoginOrg.ControllaPassword(frameOrganizzatore, frameLoginOrg , organizzatore, controllerOrganizzatore, loginTextField.getText(), loginPasswordField.getText());
+                controllerLoginOrg.ControllaPassword(frameLoginOrg , organizzatore, controllerOrganizzatore, loginTextField.getText(), loginPasswordField.getText());
             }
         });
         closeButton.addActionListener(new ActionListener() {
@@ -50,7 +48,7 @@ public class LoginOrganizzatoreGUI {
         chiudiIscrizioniButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerOrganizzatore.setPremuto(false);
+                controllerLoginOrg.chiudiIscrizioni(frameLoginOrg, controllerOrganizzatore);
                 controllerLoginOrg.verificaAperturaIscrizioni(frameLoginOrg, controllerOrganizzatore);
             }
         });

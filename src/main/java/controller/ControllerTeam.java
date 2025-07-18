@@ -1,11 +1,17 @@
 package controller;
 
 import model.Team;
+import model.Utente;
+
 import javax.swing.*;
 import java.util.ArrayList;
 
 public class ControllerTeam {
-    private ArrayList<Team> arrayTeam = new ArrayList<>();
+    protected ArrayList<Utente> arrayTeamRosso = new ArrayList<>(3);
+    protected ArrayList<Utente> arrayTeamVerde = new ArrayList<>(3);
+    protected ArrayList<Utente> arrayTeamBlu = new ArrayList<>(3);
+    protected ArrayList<Utente> arrayTeamGiallo = new ArrayList<>(3);
+    private ArrayList<Team> arrayTeam = new ArrayList<>(4);
     private String scelta;
     public ControllerTeam() {  }
 
@@ -13,8 +19,29 @@ public class ControllerTeam {
     public String getScelta() { return scelta; }
 
 
-    public void setTeam(String nomeTeam, int voto) {
-        Team team = new Team(nomeTeam, voto);
+    public void setTeamUtenti(String nomeTeam, ArrayList<Utente> utente) {
+        for (Utente utente1 : utente){
+            switch (nomeTeam) {
+                case "Team Rosso":
+                    arrayTeamRosso.add(utente1);
+                    break;
+                case "Team Verde":
+                    arrayTeamVerde.add(utente1);
+                    break;
+                case "Team Blu":
+                    arrayTeamBlu.add(utente1);
+                    break;
+                case "Team Giallo":
+                    arrayTeamGiallo.add(utente1);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    public void creaTeam(String nomeSquadra, int voto, ArrayList<Utente> utente){
+        Team team = new Team(nomeSquadra, voto, utente);
         arrayTeam.add(team);
     }
 
@@ -42,10 +69,8 @@ public class ControllerTeam {
         }
     }
 
-    public void stampaTeam(JFrame frameGiudice) {
-        for (Team team : arrayTeam) {
-            JOptionPane.showMessageDialog(frameGiudice, "Nome team: " + team.getNomeSquadra() + " - Voto: " + team.getVoto());
-        }
+    public void stampaClassificaTeam(JFrame frameGiudice) {
+      //  JOptionPane.showMessageDialog(frameGiudice, "Team Rosso: " +  )
     }
 
 
