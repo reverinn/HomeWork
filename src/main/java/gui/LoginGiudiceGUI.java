@@ -19,14 +19,16 @@ public class LoginGiudiceGUI {
     private JButton OKButton;
     private JButton pubblicaClassificheButton;
     private JTextField votoTextField;
+    private JButton registratiButton;
     private JFrame frameLoginGiudice;
-    public LoginGiudiceGUI(JFrame frameHome, ControllerLoginGiudice controllerLoginGiudice, ControllerTeam controllerTeam) {
+    public LoginGiudiceGUI(JFrame frameHome, ControllerTeam controllerTeam) {
         frameLoginGiudice=new JFrame("Login Giudice");
         frameLoginGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameLoginGiudice.setSize(800,800);
         frameLoginGiudice.setContentPane(this.loginGiudiceLabel);
         frameLoginGiudice.setVisible(true);
         frameHome.setVisible(false);
+        ControllerLoginGiudice controllerLoginGiudice = new ControllerLoginGiudice(controllerTeam);
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,23 +42,24 @@ public class LoginGiudiceGUI {
                 frameLoginGiudice.dispose();
             }
         });
-        teamDaVotareBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controllerLoginGiudice.controllaLogin();
-            }
-        });
         OKButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int valore = Integer.parseInt(votoTextField.getText());
-                controllerLoginGiudice.assegnaVoto(frameLoginGiudice, controllerTeam, teamDaVotareBox.getSelectedItem().toString(), valore);
+                controllerLoginGiudice.assegnaVoto(frameLoginGiudice, teamDaVotareBox.getSelectedItem().toString(), valore);
+                System.out.println("Valore assegnato:" + valore);
             }
         });
         pubblicaClassificheButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerLoginGiudice.stampaClassifica(frameLoginGiudice, controllerTeam);
+                controllerLoginGiudice.stampaClassifica(frameLoginGiudice);
+            }
+        });
+        registratiButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controllerLoginGiudice.registra(frameLoginGiudice, loginGiudiceTextField.getText(), loginGiudicePasswordField.getText());
             }
         });
     }

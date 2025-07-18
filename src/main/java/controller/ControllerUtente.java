@@ -19,9 +19,9 @@ public class ControllerUtente extends ControllerTeam{
         else {
             if (!nomeUtente.isEmpty() && !passwordUtente.isEmpty() && !teamScelto.contains("-")) {
                 JOptionPane.showMessageDialog(frameUtente, "Registrazione avvenuta con successo!");
-                Utente utente = new Utente(nomeUtente,passwordUtente,teamScelto);
+                Utente utente = new Utente(nomeUtente, passwordUtente, teamScelto);
                 arrayUtenti.add(utente);
-                setTeamUtenti(teamScelto, arrayUtenti);
+                aggiungiUtenteAlTeam(teamScelto, utente);
             } else {
                 JOptionPane.showMessageDialog(frameUtente, "Inserire tutti i campi!");
             }

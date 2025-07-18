@@ -27,7 +27,7 @@ public class OrganizzatoreGUI {
         frameOrganizzatore.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameOrganizzatore.setSize(800,800);
         frameOrganizzatore.setVisible(true);
-        controllerLoginOrg = new ControllerLoginOrg(organizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
+        controllerLoginOrg = new ControllerLoginOrg(organizzatore);
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,17 +38,15 @@ public class OrganizzatoreGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerOrganizzatore.controllaConferma(frameOrganizzatore, nomeOrganizzatoreTextField.getText(), passwordOrganizzatoreField.getText());
+                String nome = nomeOrganizzatoreTextField.getText();
+                String password = passwordOrganizzatoreField.getText();
+                controllerOrganizzatore.controllaConferma(frameOrganizzatore, nome, password);
             }
         });
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String nome = nomeOrganizzatoreTextField.getText();
-                String password = passwordOrganizzatoreField.getText();
-
-                controllerOrganizzatore.setOrganizzatore(nome, password);
-                controllerLoginOrg = new ControllerLoginOrg(organizzatore, nome, password);
+                frameOrganizzatore.setVisible(false);
                 loginOrganizzatore = new LoginOrganizzatoreGUI(frameOrganizzatore, controllerUtente, controllerOrganizzatore, controllerLoginOrg, organizzatore);
             }
         });

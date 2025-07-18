@@ -35,6 +35,13 @@ public class Giudice extends Utente {
         this.nome = nome;
     }
 
+    public String getNomeGiudice(){
+        return nome;
+    }
+    public String getPasswordGiudice(){
+        return password;
+    }
+
     public Giudice getGiudice(){
         return giudice;
     }

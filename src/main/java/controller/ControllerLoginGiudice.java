@@ -1,17 +1,17 @@
 package controller;
 
-import model.Utente;
+import model.Giudice;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
-public class ControllerLoginGiudice  {
+public class ControllerLoginGiudice {
     private boolean loginFattoGiudice = false;
-    private ControllerUtente controllerUtenteLoginGiudice;
-    public ControllerLoginGiudice(){}
+    private boolean giudiceRegistrato = false;
+    Giudice giudice = new Giudice();
+    private ControllerTeam controllerTeam;
 
-    public ControllerLoginGiudice(ControllerUtente controllerUtenteLoginGiudice){
-        this.controllerUtenteLoginGiudice = controllerUtenteLoginGiudice;
+    public ControllerLoginGiudice(ControllerTeam controllerTeam){
+        this.controllerTeam = controllerTeam;
     }
 
     //restituisce se il login è stato effettuato oppure no, utile per impedire certe operazioni prima di aver fatto il login
@@ -20,8 +20,26 @@ public class ControllerLoginGiudice  {
     }
 
     //metodo che controlla se la password corrisponde o se i campi inseriti sono validi
-    //DA TORNARCI DOPO! NON TOCCARE!
     public void controllaPassword(JFrame frameLoginGiudice, String nome, String password){
+        if (!giudiceRegistrato){
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Effettua prima la registrazione!");
+        }
+        else if (nome.isEmpty() || password.isEmpty()) {
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Inserire tutti i campi!");
+        }
+        else if (nome.contains(" ") || password.contains(" ") ) {
+            JOptionPane.showMessageDialog(frameLoginGiudice, "I campi non possono contenere spazi!");
+        }
+        else if (giudice.getNomeGiudice().equals(nome) && giudice.getPasswordGiudice().equals(password)) {
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Login avvenuta con successo!");
+            loginFattoGiudice = true;
+        }
+        else{
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Credenziali non corrette!");
+        }
+    }
+
+    public void registra(JFrame frameLoginGiudice, String nome, String password){
         if (nome.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(frameLoginGiudice, "Inserire tutti i campi!");
         }
@@ -29,14 +47,30 @@ public class ControllerLoginGiudice  {
             JOptionPane.showMessageDialog(frameLoginGiudice, "I campi non possono contenere spazi!");
         }
         else{
-            JOptionPane.showMessageDialog(frameLoginGiudice, "Credenziali non corrette!");
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Iscrizione avvenuta con successo!");
+            giudice.setGiudice(nome,password);
+            giudiceRegistrato = true;
         }
-
     }
 
+
     //metodo per salvare all'interno di un arraylist i voti inseriti dal giudice
-    public void assegnaVoto(JFrame frameLogin, ControllerTeam controllerTeam, String teamSelezionato, int voto){
+    public void assegnaVoto(JFrame frameLogin, String teamSelezionato, int voto){
         if (getLoginFattoGiudice()) {
+            switch (teamSelezionato) {
+                case "Team Rosso":
+                    controllerTeam.setVoto(voto, "Team Rosso");
+                    break;
+                case "Team Verde":
+                    controllerTeam.setVoto(voto, "Team Verde");
+                    break;
+                case "Team Blu":
+                    controllerTeam.setVoto(voto, "Team Blu");
+                    break;
+                case "Team Giallo":
+                    controllerTeam.setVoto(voto, "Team Giallo");
+                    break;
+            }
         }
         else{
             JOptionPane.showMessageDialog(frameLogin, "Effettua login per poter votare!");
@@ -44,12 +78,12 @@ public class ControllerLoginGiudice  {
     }
 
     //metodo che pubblica il vincitore della gara
-    public void stampaClassifica (JFrame frameLogin, ControllerTeam controllerTeam) {
+    public void stampaClassifica (JFrame frameLoginGiudice) {
         if (getLoginFattoGiudice()) {
-            controllerTeam.stampaClassificaTeam(frameLogin);
+            controllerTeam.stampaClassificaTeam(frameLoginGiudice);
         }
         else {
-            JOptionPane.showMessageDialog(frameLogin, "Effettua login per poter votare!");
+            JOptionPane.showMessageDialog(frameLoginGiudice, "Effettua login per poter votare!");
         }
     }
 }

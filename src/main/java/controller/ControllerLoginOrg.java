@@ -8,22 +8,23 @@ public class ControllerLoginOrg extends ControllerTeam {
     private Organizzatore organizzatore;
     private boolean loginFatto = false;
 
-    public ControllerLoginOrg(Organizzatore organizzatore, String nomeCorretto, String passwordCorretta){
+    public ControllerLoginOrg(Organizzatore organizzatore) {
         this.organizzatore = organizzatore;
-        organizzatore.setOrganizzatore(nomeCorretto, passwordCorretta);
     }
-
 
     public boolean getLoginFatto(){
         return loginFatto;
     }
 
     //metodo che controlla se la password corrisponde
-    public void ControllaPassword(JFrame frameLogin, Organizzatore organizzatore, ControllerOrganizzatore controllerOrganizzatore, String nome, String password){
+    public void controllaPassword(JFrame frameLogin, Organizzatore organizzatore, ControllerOrganizzatore controllerOrganizzatore, String nome, String password){
         if(nome.equals(organizzatore.getNomeOrganizzatore()) && password.equals(organizzatore.getPasswordOrganizzatore())) {
             JOptionPane.showMessageDialog(frameLogin, "Login avvenuto con successo!\nle vostre credenziali: " + organizzatore.getNomeOrganizzatore() + " " + organizzatore.getPasswordOrganizzatore() + "\ne\' possibile aprire le iscrizioni ora!");
             loginFatto = true;
             controllerOrganizzatore.setPremuto(true);
+        }
+        else if (nome.isEmpty() || password.isEmpty()){
+            JOptionPane.showMessageDialog(frameLogin, "Non Lasciare Spazi Vuoti!");
         }
         else{
             JOptionPane.showMessageDialog(frameLogin, "Credenziali non corrette!");
@@ -48,6 +49,7 @@ public class ControllerLoginOrg extends ControllerTeam {
             creaTeam("Team Verde", 0, arrayTeamVerde);
             creaTeam("Team Blu", 0, arrayTeamBlu);
             creaTeam("Team Giallo", 0, arrayTeamGiallo);
+            stampaClassificaTeam(frameLogin);
         }
         else{
             JOptionPane.showMessageDialog(frameLogin, "fai prima login!");

@@ -15,6 +15,7 @@ public class Team {
         this.utenteTeam = utente;
     }
 
+    public void setVoto(int voto) { this.voto = voto; }
     public String getNomeSquadra() { return nomeSquadra; }
     public int getVoto() { return voto; }
 
@@ -25,5 +26,7 @@ public class Team {
         utentiComponenti.add(utente);
     }
 
-
+    public String toString(){
+        return "nome: " + nomeSquadra + " voto: " + voto;
+    }
 }

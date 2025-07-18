@@ -18,7 +18,6 @@ public class UtenteGUI {
     private JLabel etNomeUtente;
     private JLabel etPassword;
     private JButton confermaButton;
-    private JComboBox comboBox1;
     private JComboBox scegliTeamBox;
     public JFrame frameUtente;
 

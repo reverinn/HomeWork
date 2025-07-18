@@ -19,30 +19,37 @@ public class ControllerTeam {
     public String getScelta() { return scelta; }
 
 
-    public void setTeamUtenti(String nomeTeam, ArrayList<Utente> utente) {
-        for (Utente utente1 : utente){
-            switch (nomeTeam) {
-                case "Team Rosso":
-                    arrayTeamRosso.add(utente1);
-                    break;
-                case "Team Verde":
-                    arrayTeamVerde.add(utente1);
-                    break;
-                case "Team Blu":
-                    arrayTeamBlu.add(utente1);
-                    break;
-                case "Team Giallo":
-                    arrayTeamGiallo.add(utente1);
-                    break;
-                default:
-                    break;
-            }
+    public void aggiungiUtenteAlTeam(String nomeTeam, Utente utente) {
+        switch (nomeTeam) {
+            case "Team Rosso":
+                arrayTeamRosso.add(utente);
+                break;
+            case "Team Verde":
+                arrayTeamVerde.add(utente);
+                break;
+            case "Team Blu":
+                arrayTeamBlu.add(utente);
+                break;
+            case "Team Giallo":
+                arrayTeamGiallo.add(utente);
+                break;
+            default:
+                break;
         }
     }
 
     public void creaTeam(String nomeSquadra, int voto, ArrayList<Utente> utente){
         Team team = new Team(nomeSquadra, voto, utente);
+        team.setVoto(voto);
         arrayTeam.add(team);
+    }
+
+    public void setVoto(int voto, String nomeSquadra) {
+        for (Team team : arrayTeam) {
+            if (team.getNomeSquadra().equalsIgnoreCase(nomeSquadra)) {
+                team.setVoto(voto);
+            }
+        }
     }
 
     //permette di confermare la scelta se niente è andato storto
@@ -70,7 +77,9 @@ public class ControllerTeam {
     }
 
     public void stampaClassificaTeam(JFrame frameGiudice) {
-      //  JOptionPane.showMessageDialog(frameGiudice, "Team Rosso: " +  )
+      for (Team team : arrayTeam) {
+          System.out.println(team.getNomeSquadra() + ": " + team.getVoto());
+      }
     }
 
 

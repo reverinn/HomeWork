@@ -29,7 +29,7 @@ public class LoginOrganizzatoreGUI {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerLoginOrg.ControllaPassword(frameLoginOrg , organizzatore, controllerOrganizzatore, loginTextField.getText(), loginPasswordField.getText());
+                controllerLoginOrg.controllaPassword(frameLoginOrg , organizzatore, controllerOrganizzatore, loginTextField.getText(), loginPasswordField.getText());
             }
         });
         closeButton.addActionListener(new ActionListener() {

@@ -20,6 +20,7 @@ public class Home {
     private ControllerOrganizzatore controllerOrganizzatore;
     private ControllerUtente controllerUtente;
     private ControllerLoginGiudice controllerLoginGiudice;
+    private LoginGiudiceGUI loginGiudiceGUI;
 
     public static void main(String[] args) {
         frameHome = new JFrame("Home");
@@ -53,8 +54,7 @@ public class Home {
         giudiciButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerLoginGiudice = new ControllerLoginGiudice(controllerUtente);
-                LoginGiudiceGUI loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerLoginGiudice, controllerTeam);
+                loginGiudiceGUI = new LoginGiudiceGUI(frameHome, controllerTeam);
                 frameHome.setVisible(false);
             }
         });
