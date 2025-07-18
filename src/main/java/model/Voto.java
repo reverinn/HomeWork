@@ -8,9 +8,9 @@ public class Voto {
 
 
 
-    public Voto(String squadra, String ValoreVoto){
+    public Voto(String squadra, String valoreVoto){
         this.nomeSquadra = squadra;
-        this.valoreVoto = ValoreVoto;
+        this.valoreVoto = valoreVoto;
     }
 
     public String getValoreVoto() {
