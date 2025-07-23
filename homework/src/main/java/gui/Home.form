@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="gui.Home">
+  <grid id="27dc6" binding="panelHome" layout-manager="GridLayoutManager" row-count="2" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="113" y="98" width="611" height="501"/>
+    </constraints>
+    <properties>
+      <background color="-514"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="bb715" class="javax.swing.JButton" binding="utenteButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12201734"/>
+          <text value="Utente"/>
+        </properties>
+      </component>
+      <component id="d6ce6" class="javax.swing.JButton" binding="giudiciButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="1" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12201734"/>
+          <text value="Giudici"/>
+        </properties>
+      </component>
+      <component id="db442" class="javax.swing.JButton" binding="teamButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12201734"/>
+          <text value="Team"/>
+        </properties>
+      </component>
+      <component id="eeb40" class="javax.swing.JButton" binding="organizzatoreButton" default-binding="true">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12201734"/>
+          <text value="Organizzatore"/>
+        </properties>
+      </component>
+      <component id="f8cd7" class="javax.swing.JLabel" binding="TITOLO">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-393729"/>
+          <enabled value="true"/>
+          <font name="Courier New" size="26"/>
+          <text value="HACKATON 25/26"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
