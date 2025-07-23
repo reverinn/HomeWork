@@ -1,0 +1,6 @@
+l'entry point del progetto è src\java\gui\Home.Java
+una volta avviato, si troverà una home con 4 pulsanti, ognuno con funzioni diverse.
+la prima cosa da fare è aprire le iscrizioni, perchè se non sono aperte nessuno può fare niente.
+Bisogna premere su "Organizzatore" e registrarsi, successivamente fare il login e aprire le iscrizioni.
+Poi si torna sulla Home e si va su "Utenti" e si registrano gli utenti e gli si assegna un team, mentre nel pulsante Team c'è la possibilità di caricare il documento e scegliere quale team deve caricare quest'ultimo.
+Successivamente bisogna chiudere le iscrizioni una volta terminate, e i team verranno creati, infine nella sezione Giudici bisogna registrarsi, fare il login e dare un voto, una volta finito di assegnare i voti sarà possibile visualizzare la classifica

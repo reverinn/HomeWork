@@ -7,7 +7,16 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 
+/**
+ * The type Organizzatore dao impls.
+ */
 public class OrganizzatoreDAOImpls {
+    /**
+     * Add organizzatore.
+     *
+     * @param nomeUtente the nome utente
+     * @param password   the password
+     */
     public void addOrganizzatore(String nomeUtente, String password) {
         try(Connection connection= DatabaseConnection.getInstance()){
             String sql = "INSERT INTO organizzatori (nome_utente, password) VALUES (?, ?, ?)";

@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Home.
+ */
 public class Home {
     private JPanel panelHome;
     private JButton utenteButton;
@@ -22,6 +25,11 @@ public class Home {
     private ControllerLoginGiudice controllerLoginGiudice;
     private LoginGiudiceGUI loginGiudiceGUI;
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         frameHome = new JFrame("Home");
         frameHome.setContentPane(new Home().panelHome);
@@ -30,6 +38,9 @@ public class Home {
         frameHome.setSize(1920,1080);
     }
 
+    /**
+     * Instantiates a new Home.
+     */
     public Home() {
         Organizzatore organizzatore = new Organizzatore();
         controllerOrganizzatore = new ControllerOrganizzatore(organizzatore);

@@ -6,6 +6,9 @@ import java.awt.event.ActionListener;
 import controller.ControllerTeam;
 import controller.ControllerOrganizzatore;
 
+/**
+ * The type Team gui.
+ */
 public class TeamGUI {
     private JPanel teamPanel;
     private JButton closeButton;
@@ -13,7 +16,18 @@ public class TeamGUI {
     private JLabel etselTeam;
     private JButton okButton;
     private JButton CARICADOCUMENTOButton;
+    /**
+     * The Frame team.
+     */
     public JFrame frameTeam;
+
+    /**
+     * Instantiates a new Team gui.
+     *
+     * @param frame                   the frame
+     * @param controllerOrganizzatore the controller organizzatore
+     * @param controllerTeam          the controller team
+     */
     public TeamGUI(JFrame frame, ControllerOrganizzatore controllerOrganizzatore, ControllerTeam controllerTeam) {
         frameTeam = new JFrame("Team");
         frameTeam.setContentPane(this.teamPanel);

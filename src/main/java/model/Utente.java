@@ -1,11 +1,27 @@
 package model;
 
+/**
+ * The type Utente.
+ */
 public class Utente {
+    /**
+     * The Password utente.
+     */
     protected String passwordUtente;
+    /**
+     * The Nome utente.
+     */
     protected String nomeUtente;
     private String teamScelto;
 
-    //costruttore per arraylist
+    /**
+     * Instantiates a new Utente.
+     *
+     * @param nome       the nome
+     * @param password   the password
+     * @param teamScelto the team scelto
+     */
+//costruttore per arraylist
     public Utente(String nome, String password, String teamScelto) {
         this.nomeUtente = nome;
         this.passwordUtente = password;
@@ -27,7 +43,10 @@ public class Utente {
         }
     }
 
-    //costruttore per classe figlia Giudice
+    /**
+     * Instantiates a new Utente.
+     */
+//costruttore per classe figlia Giudice
     public Utente(){}
 
     public String toString(){

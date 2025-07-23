@@ -7,6 +7,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Utente dao impls.
+ */
 public class UtenteDAOImpls implements UtenteDao {
 
     public void addUtente(String nomeUtente, String password, String teamScelto) {

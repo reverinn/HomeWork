@@ -6,6 +6,9 @@ import dao.GiudiceDao;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * The type Giudice dao impls.
+ */
 public class GiudiceDAOImpls implements GiudiceDao {
 
     public void addGiudice(String nomeUtente, String password) {

@@ -7,6 +7,9 @@ import controller.ControllerLoginGiudice;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Login giudice gui.
+ */
 public class LoginGiudiceGUI {
     private JTextField loginGiudiceTextField;
     private JButton confermaButton;
@@ -20,6 +23,13 @@ public class LoginGiudiceGUI {
     private JTextField votoTextField;
     private JButton registratiButton;
     private JFrame frameLoginGiudice;
+
+    /**
+     * Instantiates a new Login giudice gui.
+     *
+     * @param frameHome              the frame home
+     * @param controllerLoginGiudice the controller login giudice
+     */
     public LoginGiudiceGUI(JFrame frameHome, ControllerLoginGiudice controllerLoginGiudice) {
         frameLoginGiudice=new JFrame("Login Giudice");
         frameLoginGiudice.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

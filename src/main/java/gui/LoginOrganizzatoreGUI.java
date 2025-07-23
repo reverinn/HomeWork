@@ -10,6 +10,9 @@ import model.Organizzatore;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Login organizzatore gui.
+ */
 public class LoginOrganizzatoreGUI {
     private JTextField loginTextField;
     private JPasswordField loginPasswordField;
@@ -19,6 +22,16 @@ public class LoginOrganizzatoreGUI {
     private JButton apriIscrizioniButton;
     private JButton chiudiIscrizioniButton;
     private JFrame frameLoginOrg;
+
+    /**
+     * Instantiates a new Login organizzatore gui.
+     *
+     * @param frameOrganizzatore      the frame organizzatore
+     * @param controllerUtente        the controller utente
+     * @param controllerOrganizzatore the controller organizzatore
+     * @param controllerLoginOrg      the controller login org
+     * @param organizzatore           the organizzatore
+     */
     public LoginOrganizzatoreGUI(JFrame frameOrganizzatore, ControllerUtente controllerUtente, ControllerOrganizzatore controllerOrganizzatore, ControllerLoginOrg controllerLoginOrg, Organizzatore organizzatore){
         frameLoginOrg=new JFrame("Login Organizzatore");
         frameLoginOrg.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

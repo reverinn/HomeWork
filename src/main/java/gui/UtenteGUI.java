@@ -7,7 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-
+/**
+ * The type Utente gui.
+ */
 public class UtenteGUI {
 
     private JPanel panelUtente;
@@ -19,8 +21,18 @@ public class UtenteGUI {
     private JLabel etPassword;
     private JButton confermaButton;
     private JComboBox scegliTeamBox;
+    /**
+     * The Frame utente.
+     */
     public JFrame frameUtente;
 
+    /**
+     * Instantiates a new Utente gui.
+     *
+     * @param controllerUtente        the controller utente
+     * @param frameHome               the frame home
+     * @param controllerOrganizzatore the controller organizzatore
+     */
     public UtenteGUI(ControllerUtente controllerUtente, JFrame frameHome, ControllerOrganizzatore controllerOrganizzatore) {
         frameUtente = new JFrame("Utente");
         frameUtente.setContentPane(this.panelUtente);

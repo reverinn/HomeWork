@@ -4,14 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded55146-c838-48b0-93fc-23090a8ee3ca" name="Changes" comment="" />
+    <list default="true" id="ded55146-c838-48b0-93fc-23090a8ee3ca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginOrg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginOrg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/GiudiceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/GiudiceDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrganizzatoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrganizzatoreDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UtenteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daoImplements/GiudiceDAOImpls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daoImplements/GiudiceDAOImpls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daoImplements/OrganizzatoreDAOImpls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daoImplements/OrganizzatoreDAOImpls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/daoImplements/UtenteDAOImpls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daoImplements/UtenteDAOImpls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/LoginOrganizzatoreGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/LoginOrganizzatoreGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/OrganizzatoreGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/OrganizzatoreGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/UtenteGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/UtenteGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Documento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Giudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Giudice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Organizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Organizzatore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Piattaforma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Piattaforma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Voto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Voto.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -23,12 +56,17 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Home.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/matte/Documents/GitHub/HomeWork/homework&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/matte/Documents/GitHub/CartellaHomeWork/HomeWork&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -51,6 +89,8 @@
       <workItem from="1753294771695" duration="94000" />
       <workItem from="1753295203404" duration="22000" />
       <workItem from="1753295231365" duration="192000" />
+      <workItem from="1753296040814" duration="401000" />
+      <workItem from="1753296481822" duration="409000" />
     </task>
     <servers />
   </component>
