@@ -4,52 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded55146-c838-48b0-93fc-23090a8ee3ca" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginOrg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginOrg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerTeam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/GiudiceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/GiudiceDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrganizzatoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/OrganizzatoreDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UtenteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daoImplements/GiudiceDAOImpls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daoImplements/GiudiceDAOImpls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daoImplements/OrganizzatoreDAOImpls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daoImplements/OrganizzatoreDAOImpls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/daoImplements/UtenteDAOImpls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/daoImplements/UtenteDAOImpls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/LoginOrganizzatoreGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/LoginOrganizzatoreGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/OrganizzatoreGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/OrganizzatoreGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/UtenteGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/UtenteGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Documento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Documento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Giudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Giudice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Organizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Organizzatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Piattaforma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Piattaforma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Voto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Voto.java" afterDir="false" />
+    <list default="true" id="ab8b95c7-ae52-42e6-9bb3-d2c4ebe0861b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/GiudiceDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/OrganizzatoreDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/UtenteDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/daoImplements/GiudiceDAOImpls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/daoImplements/OrganizzatoreDAOImpls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/daoImplements/UtenteDAOImpls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Cirofalas&quot;
+  }
 }</component>
-  <component name="ProjectId" id="30HqIw2isdb8wYFXuFwQSW59fC1" />
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/reverinn/HomeWork.git&quot;,
+    &quot;accountId&quot;: &quot;6200eb8e-8c87-48cf-bcdc-2eae52bef8f3&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="30HX5MYj6cr7BxKiSacNTmRvwSY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,12 +53,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Home.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/matte/Documents/GitHub/CartellaHomeWork/HomeWork&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cirus/Desktop/homework&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,23 +69,25 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
-        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ded55146-c838-48b0-93fc-23090a8ee3ca" name="Changes" comment="" />
-      <created>1753294769991</created>
+      <changelist id="ab8b95c7-ae52-42e6-9bb3-d2c4ebe0861b" name="Changes" comment="" />
+      <created>1753285287900</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1753294769991</updated>
-      <workItem from="1753294771695" duration="94000" />
-      <workItem from="1753295203404" duration="22000" />
-      <workItem from="1753295231365" duration="192000" />
-      <workItem from="1753296040814" duration="401000" />
-      <workItem from="1753296481822" duration="409000" />
+      <updated>1753285287900</updated>
+      <workItem from="1753285289017" duration="463000" />
+      <workItem from="1753285892773" duration="386000" />
+      <workItem from="1753286345936" duration="489000" />
+      <workItem from="1753286919919" duration="1438000" />
+      <workItem from="1753288474077" duration="54000" />
+      <workItem from="1753288564405" duration="1317000" />
+      <workItem from="1753289954895" duration="2558000" />
     </task>
     <servers />
   </component>
