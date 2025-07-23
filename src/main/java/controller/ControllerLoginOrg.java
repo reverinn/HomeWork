@@ -49,7 +49,6 @@ public class ControllerLoginOrg {
             controllerTeam.creaTeam("Team Verde", 0,  controllerTeam.getArrayTeamVerde());
             controllerTeam.creaTeam("Team Blu", 0,  controllerTeam.getArrayTeamBlu());
             controllerTeam.creaTeam("Team Giallo", 0,  controllerTeam.getArrayTeamGiallo());
-            controllerTeam.stampaClassificaTeam(frameLogin);
         }
         else{
             JOptionPane.showMessageDialog(frameLogin, "fai prima login!");
