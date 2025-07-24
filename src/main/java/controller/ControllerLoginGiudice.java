@@ -47,10 +47,10 @@ public class ControllerLoginGiudice {
         if (!giudiceRegistrato){
             JOptionPane.showMessageDialog(frameLoginGiudice, "Effettua prima la registrazione!");
         }
-        else if (nome.isEmpty() || password.isEmpty()) {
+        else if (nome.isEmpty() && password.isEmpty()) {
             JOptionPane.showMessageDialog(frameLoginGiudice, "Inserire tutti i campi!");
         }
-        else if (nome.contains(" ") || password.contains(" ") ) {
+        else if (nome.contains(" ") && password.contains(" ") ) {
             JOptionPane.showMessageDialog(frameLoginGiudice, "I campi non possono contenere spazi!");
         }
         else if (giudice.getNomeGiudice().equals(nome) && giudice.getPasswordGiudice().equals(password)) {
@@ -70,7 +70,7 @@ public class ControllerLoginGiudice {
      * @param password          the password
      */
 //permette all'utente di registrarsi
-    public void registra(JFrame frameLoginGiudice, String nome, String password){
+    public void registra(JFrame frameHome, JFrame frameLoginGiudice, String nome, String password){
         if (nome.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(frameLoginGiudice, "Inserire tutti i campi!");
         }
@@ -81,6 +81,8 @@ public class ControllerLoginGiudice {
             JOptionPane.showMessageDialog(frameLoginGiudice, "Iscrizione avvenuta con successo!");
             giudice.setGiudice(nome,password);
             giudiceRegistrato = true;
+            frameLoginGiudice.setVisible(false);
+            frameHome.setVisible(true);
         }
     }
 

@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab8b95c7-ae52-42e6-9bb3-d2c4ebe0861b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/GiudiceDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/OrganizzatoreDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/UtenteDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daoImplements/GiudiceDAOImpls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daoImplements/OrganizzatoreDAOImpls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/daoImplements/UtenteDAOImpls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +55,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/cirus/Desktop/homework&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -69,8 +68,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
       </set>
     </attachedChunks>
   </component>
@@ -88,6 +87,8 @@
       <workItem from="1753288474077" duration="54000" />
       <workItem from="1753288564405" duration="1317000" />
       <workItem from="1753289954895" duration="2558000" />
+      <workItem from="1753300134818" duration="98000" />
+      <workItem from="1753376089657" duration="2037000" />
     </task>
     <servers />
   </component>

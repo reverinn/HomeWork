@@ -67,7 +67,7 @@ public class LoginGiudiceGUI {
         registratiButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerLoginGiudice.registra(frameLoginGiudice, loginGiudiceTextField.getText(), loginGiudicePasswordField.getText());
+                controllerLoginGiudice.registra(frameHome, frameLoginGiudice, loginGiudiceTextField.getText(), loginGiudicePasswordField.getText());
             }
         });
     }

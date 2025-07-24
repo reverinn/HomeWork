@@ -75,7 +75,7 @@ public class ControllerOrganizzatore {
         if (nomeOrganizzatore.toLowerCase().contains(" ") || passwordOrganizzatore.toLowerCase().contains(" ")) {
             JOptionPane.showMessageDialog(frameOrganizzatore, "La password non può contenere spazi iniziali o finali!");
         }
-        else if (nomeOrganizzatore.isEmpty() && passwordOrganizzatore.isEmpty()){
+        else if (nomeOrganizzatore.isEmpty() || passwordOrganizzatore.isEmpty()){
             JOptionPane.showMessageDialog(frameOrganizzatore,"Inserire tutti i campi!");
         }
         else{

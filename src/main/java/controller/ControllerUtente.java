@@ -1,6 +1,8 @@
 package controller;
 
 import model.Utente;
+import dao.UtenteDao;
+import daoImplements.UtenteDAOImpls;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -9,7 +11,7 @@ import javax.swing.*;
  */
 public class ControllerUtente extends ControllerTeam{
     private ArrayList<Utente> arrayUtenti = new ArrayList<>();
-
+    private UtenteDao utenteDao = new UtenteDAOImpls();
     /**
      * Instantiates a new Controller utente.
      */
@@ -33,11 +35,12 @@ public class ControllerUtente extends ControllerTeam{
             JOptionPane.showMessageDialog(frameUtente, "La password non può contenere spazi iniziali o finali!");
         }
         else {
-            if (!nomeUtente.isEmpty() && !passwordUtente.isEmpty() && !teamScelto.contains("-")) {
+            if (!nomeUtente.isEmpty() && !passwordUtente.isEmpty() || !teamScelto.contains("-")) {
                 JOptionPane.showMessageDialog(frameUtente, "Registrazione avvenuta con successo!");
                 Utente utente = new Utente(nomeUtente, passwordUtente, teamScelto);
                 arrayUtenti.add(utente);
                 aggiungiUtenteAlTeam(teamScelto, utente);
+                utenteDao.addUtente(nomeUtente, passwordUtente, teamScelto);
             } else {
                 JOptionPane.showMessageDialog(frameUtente, "Inserire tutti i campi!");
             }
