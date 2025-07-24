@@ -116,8 +116,6 @@ public class ControllerTeam {
         } else {
             JOptionPane.showMessageDialog(frameTeam, "Scelta avvenuta con successo!");
             setScelta(selTeam);
-            frameTeam.setVisible(false);
-            frameHome.setVisible(true);
             JOptionPane.showMessageDialog(frameTeam, "Selezionato: " + getScelta());
         }
     }
@@ -130,12 +128,13 @@ public class ControllerTeam {
      * @param controllerOrganizzatore the controller organizzatore
      */
 //permette di inviare il documento al team se le iscrizioni sono state aperte dall'organizzatore
-    public void controllaCaricamento(JFrame frameTeam, ControllerOrganizzatore controllerOrganizzatore){
+    public void controllaCaricamento(JFrame frameHome, JFrame frameTeam, ControllerOrganizzatore controllerOrganizzatore){
         if (!controllerOrganizzatore.getPremuto()) {
             JOptionPane.showMessageDialog(frameTeam, "Le iscrizioni sono chiuse!");
         } else {
             JOptionPane.showMessageDialog(frameTeam, "Documento inviato con successo!");
             frameTeam.setVisible(false);
+            frameHome.setVisible(true);
         }
     }
 

@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab8b95c7-ae52-42e6-9bb3-d2c4ebe0861b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginGiudice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerOrganizzatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerUtente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/LoginGiudiceGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginOrg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerLoginOrg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ControllerTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ControllerTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/TeamGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +87,7 @@
       <workItem from="1753288564405" duration="1317000" />
       <workItem from="1753289954895" duration="2558000" />
       <workItem from="1753300134818" duration="98000" />
-      <workItem from="1753376089657" duration="2037000" />
+      <workItem from="1753376089657" duration="2845000" />
     </task>
     <servers />
   </component>

@@ -25,10 +25,10 @@
         </constraints>
         <properties>
           <model>
-            <item value="TEAM 1"/>
-            <item value="TEAM 2"/>
-            <item value="TEAM 3"/>
-            <item value="TEAM 4"/>
+            <item value="Team Rosso"/>
+            <item value="Team Blu"/>
+            <item value="Team Verde"/>
+            <item value="Team Giallo"/>
           </model>
         </properties>
       </component>

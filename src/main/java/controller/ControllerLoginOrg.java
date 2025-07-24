@@ -40,7 +40,7 @@ public class ControllerLoginOrg {
      */
 //metodo che controlla se la password corrisponde
     public void controllaPassword(JFrame frameLogin, Organizzatore organizzatore, ControllerOrganizzatore controllerOrganizzatore, String nome, String password){
-        if(nome.equals(organizzatore.getNomeOrganizzatore()) && password.equals(organizzatore.getPasswordOrganizzatore())) {
+        if(nome.equals(organizzatore.getNomeOrganizzatore()) || password.equals(organizzatore.getPasswordOrganizzatore())) {
             JOptionPane.showMessageDialog(frameLogin, "Login avvenuto con successo!\nle vostre credenziali: " + organizzatore.getNomeOrganizzatore() + " " + organizzatore.getPasswordOrganizzatore() + "\ne\' possibile aprire le iscrizioni ora!");
             loginFatto = true;
             controllerOrganizzatore.setPremuto(true);

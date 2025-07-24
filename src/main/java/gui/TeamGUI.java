@@ -24,11 +24,12 @@ public class TeamGUI {
     /**
      * Instantiates a new Team gui.
      *
-     * @param frame                   the frame
+     * @param frameHome                   the frame
      * @param controllerOrganizzatore the controller organizzatore
      * @param controllerTeam          the controller team
      */
-    public TeamGUI(JFrame frame, ControllerOrganizzatore controllerOrganizzatore, ControllerTeam controllerTeam) {
+    public TeamGUI(JFrame frameHome
+            , ControllerOrganizzatore controllerOrganizzatore, ControllerTeam controllerTeam) {
         frameTeam = new JFrame("Team");
         frameTeam.setContentPane(this.teamPanel);
         frameTeam.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,19 +39,19 @@ public class TeamGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameTeam.dispose();
-                frame.setVisible(true);
+                frameHome.setVisible(true);
             }
         });
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerTeam.controllaOK(frame,frameTeam, teamBox.getSelectedItem().toString(), controllerOrganizzatore);
+                controllerTeam.controllaOK(frameHome,frameTeam, teamBox.getSelectedItem().toString(), controllerOrganizzatore);
             }
         });
         CARICADOCUMENTOButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controllerTeam.controllaCaricamento(frameTeam, controllerOrganizzatore);
+                controllerTeam.controllaCaricamento(frameHome, frameTeam, controllerOrganizzatore);
             }
         });
     }
